@@ -1,14 +1,14 @@
 # SITE CONFIGURATION
 baseurl: "/"
 url: "https://siewlinyap.github.io"
-title: Siew Lin, Yap  # site's title
-description: "A website with blog posts and pages" # used by search engines
+title: SiewLin_Yap  # site's title
+description: "Stories are just data with a soul" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type on Strap # blog's title
+  title: SiewLin_Yap # blog's title
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
