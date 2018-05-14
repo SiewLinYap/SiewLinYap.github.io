@@ -18,8 +18,7 @@ theme_settings:
      <p>A Journey to Data Science @ Singapore</p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
-   DSI3 @ GA 2018
-   Never Stop Learning as Life Never Stops Teaching
+   DSI3 @ GA 2018 : Never Stop Learning as Life Never Stops Teaching
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
