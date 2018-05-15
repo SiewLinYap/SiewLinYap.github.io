@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Where's the UNICORN ? --- Prediction of Company Growth Potential ---
+title: Where's the UNICORN ? Prediction of Company Growth Potential
 img: "assets/img/portfolio/unicorn.png"
 date: May, 18 2018
 tags: [Lorem]
