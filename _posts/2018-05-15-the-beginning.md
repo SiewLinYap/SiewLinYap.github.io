@@ -1,6 +1,6 @@
 ---
 layout: post
-title: It's not the end, it's just the beginning
+title: It's not the end. It's just the beginning
 thumbnail: "assets/img/thumbnails/KeepCalmLoveData.jpeg"
 tags: [Test, Lorem]
 ---
