@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It's not the end. It's just the beginning
-thumbnail: "assets/img/thumbnails/KeepCalmLoveData.jpeg"
+thumbnail: "assets/img/thumbnails/KeepCalmCarryOn.jpeg"
 tags: [Test, Lorem]
 ---
 
