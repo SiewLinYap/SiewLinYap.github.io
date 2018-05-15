@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Feature images
-feature-img: "assets/img/pexels/triangle.jpeg"
-thumbnail: "assets/img/thumbnails/desk-messy.jpeg"
+feature-img: "assets/img/pexels/desk-messy.jpeg"
+thumbnail: "assets/img/thumbnails/KeepCalmLoveData.jpeg"
 tags: [Test, Lorem]
 ---
 
