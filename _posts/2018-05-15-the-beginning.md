@@ -2,7 +2,6 @@
 layout: post
 title: It's not the end, it's just the beginning
 feature-img: "assets/img/pexels/KeepCalmLoveData.jpeg"
-thumbnail: "assets/img/thumbnails/KeepCalmLoveData.jpeg"
 tags: [Test, Lorem]
 ---
 
