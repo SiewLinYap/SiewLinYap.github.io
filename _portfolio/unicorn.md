@@ -55,7 +55,7 @@ To identify high growth company & predict its potential for successful IPO / acq
 ## Analytical Approach
 ---
 
-### 1. Scope Definition to Limit Exploration towards Market Sectors of High Interest Among Key Investors
+#### 1. Scope Definition to Limit Exploration towards Market Sectors of High Interest Among Key Investors
 Since available data set was back to 2015, start up companies to focus for the analysis shall not be funded too many years back.
 * Criteria 1: Limit scope to companies with last round of funding obtained at 2010 and beyond
 * Criteria 2: Restrict analysis to only funding sources coming from:
@@ -65,10 +65,10 @@ Since available data set was back to 2015, start up companies to focus for the a
               * private_equity
 * Criteria 3: Extraction of data involving investments done by top 10 investors
 
-### 2. Thorough Data Mining & Cleaning
+#### 2. Thorough Data Mining & Cleaning
 Data cleansing and filtration based on scopes defined and perform preliminary basic analysis to get the most relevant data out for next level of details analysis
 
-### 3. Exploratory Data Analysis
+#### 3. Exploratory Data Analysis
 * Extration of Top10 Key Investors based on the Total Investment Amount in USD
 * Reclassification of Market Sector to simplify and group scatterred sectors into the closest business fields
 * Similarity of Investment Porfolio via Network Graph
@@ -78,11 +78,11 @@ Data cleansing and filtration based on scopes defined and perform preliminary ba
               * IPO companies
               * Closed down companies
                             
-### 4. Sampling Methods & Predictive Model Selection
+#### 4. Sampling Methods & Predictive Model Selection
 * Evaluation of various sampling methods for Imbalanced datasets
 * Evaluation of various classification models for best predictive model selection
 
-### 5. Data Validation for Predictive Model Improvement
+#### 5. Data Validation for Predictive Model Improvement
 * Validation of False Positive data versus latest state in 2018
 * Recalculation with latest state to check the actual predictive model performance
 
@@ -92,7 +92,7 @@ Data cleansing and filtration based on scopes defined and perform preliminary ba
 ## Analytical Outcomes
 ---
 
-### 1. Finalization of Top10 Key Investors
+#### 1. Finalization of Top10 Key Investors
 
 {% highlight js %}
 
@@ -115,7 +115,7 @@ plt.show()
 
 ![Top10_investors_graph logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_graph.jpeg)
 
-### 2. Market Sectors In Focus by Top10 Key Investors
+#### 2. Market Sectors In Focus by Top10 Key Investors
 
 
 {% highlight js %}
@@ -155,7 +155,7 @@ plt.show()
 
 ![Market_sector_in_focus logo]({{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg)
 
-### 3. Similarity of Investment Portfolio via Network Graph
+#### 3. Similarity of Investment Portfolio via Network Graph
 
 
 {% highlight js %}
