@@ -34,8 +34,8 @@ To identify high growth company & predict its potential for successful IPO / acq
 
 
 * Dianogstic of Binary Classification Performance
-&npsp; * To assess using Receiver Operating Characteristic curve ( [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ) , a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied
-&npsp; * Target ROC_AUC score > 70%
+    * To assess using Receiver Operating Characteristic curve ( [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ) , a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied
+    * Target ROC_AUC score > 70%
 
 
 ![Success_metrics logo]({{ site.baseurl }}/assets/img/portfolio/Success_metrics.jpeg)
@@ -60,10 +60,10 @@ Since available data set was back to 2015, start up companies to focus for the a
 
 * Criteria 1: Limit scope to companies with last round of funding obtained at 2010 and beyond
 * Criteria 2: Restrict analysis to only funding sources coming from:
-&npsp; * venture capitalist
-&npsp; * seed funding
-&npsp; * angel investor
-&npsp; * private_equity
+    * venture capitalist
+    * seed funding
+    * angel investor
+    * private_equity
 * Criteria 3: Extraction of data involving investments done by top 10 investors
 
 #### 2. Thorough Data Mining & Cleaning
@@ -75,9 +75,9 @@ Data cleansing and filtration based on scopes defined and perform preliminary ba
 * Similarity of Investment Porfolio via Network Graph
 * Missing Values Handling and Replacement via Web-Scrapping
 * Analytics and Stats for
-&npsp; * Acquired companies
-&npsp; * IPO companies
-&npsp; * Closed down companies
+    * Acquired companies
+    * IPO companies
+    * Closed down companies
                             
 #### 4. Sampling Methods & Predictive Model Selection
 * Evaluation of various sampling methods for Imbalanced datasets
