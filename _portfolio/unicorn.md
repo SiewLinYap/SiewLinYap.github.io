@@ -55,7 +55,7 @@ To identify high growth company & predict its potential for successful IPO / acq
 ## Analytical Approach
 ---
 
-#### 1. Scope Definition to Limit Exploration towards Market Sectors of High Interest
+#### 1. Scope Definition to Focus Towards Market Sectors of High Interest
 Since available data set was back to 2015, start up companies to focus for the analysis shall not be funded too many years back.
 
 * Criteria 1: Limit scope to companies with last round of funding obtained at 2010 and beyond
