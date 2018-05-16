@@ -105,7 +105,7 @@ df_top10_investors
 
 
 {% highlight js %}
-# top 10 investors by amount raised_usd
+// top 10 investors by amount raised_usd
 
 df_top10_investors.sort_values('Raised Amount Usd', ascending=True).plot(x='Investor Name', y='Raised Amount Usd', kind='barh', figsize=(15,4), colormap='plasma')
 plt.title('Total Investment Amount in USD by Top 10 Investors')
@@ -118,19 +118,19 @@ plt.show()
 
 
 {% highlight js %}
-# attempt to use TF-IDF vectorizer on company category to check which key words are higher importance/appearance
-# for better decision making to map the most relevant ones together as one new market sector
+// attempt to use TF-IDF vectorizer on company category to check which key words are higher importance/appearance
+// for better decision making to map the most relevant ones together as one new market sector
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 tvec = TfidfVectorizer(stop_words='english', min_df=1, ngram_range=(1,2), max_features=1000)
-# use ngram(1,2) because category more relevant when mentioning in single (software), or pair words (consumer electronics) 
+// use ngram(1,2) because category more relevant when mentioning in single (software), or pair words (consumer electronics) 
 
 tvec.fit(df_top10investor_choice['company_category_list_2'])
 df_catModified_tvec = pd.DataFrame(tvec.transform(df_top10investor_choice['company_category_list_2']).todense(), columns=['Category_'+ v for v in tvec.get_feature_names()], index=df_top10investor_choice['company_category_list_2'].index)
-# to add prefix of Category in column name, so it is clearer that these features are originally from category column
-# when putting the post TF-IDF processed data into new dataframe later on combining with other post TF_IDF data
-# to include index=df_top10investor_choice['company_category_list_2'].index in order to have the index consistent and avoid mismatch of index
-# when using pd.concat with other df later on
+// to add prefix of Category in column name, so it is clearer that these features are originally from category column
+// when putting the post TF-IDF processed data into new dataframe later on combining with other post TF_IDF data
+// to include index=df_top10investor_choice['company_category_list_2'].index in order to have the index consistent and avoid mismatch of index
+// when using pd.concat with other df later on
 
 df_catModified_tvec.sum().sort_values(ascending=False)
 
