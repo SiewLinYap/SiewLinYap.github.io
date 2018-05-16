@@ -102,7 +102,7 @@ df_top10_investors
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg" width="640" height="460">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg" width="600" height="420">
 
 
 {% highlight js %}
