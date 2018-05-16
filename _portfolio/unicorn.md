@@ -20,7 +20,7 @@ The outcomes of the data analysis and model prediction provide moderate informat
 ---
 
 To identify high growth company & predict its potential for successful IPO / acquisition
-![Goal_ipo_acquired logo](Goal_ipo_acquired.jpeg)
+![Goal_ipo_acquired logo](assets/img/portfolio/Goal_ipo_acquired.jpeg)
 
 
 <a id="success"></a>
@@ -38,7 +38,7 @@ To identify high growth company & predict its potential for successful IPO / acq
  * Target ROC_AUC score > 70%
 
 
-![Success_metrics logo](Success_metrics.jpeg)
+![Success_metrics logo](assets/img/portfolio/Success_metrics.jpeg)
 
 
 <a id="data_source"></a>
