@@ -19,4 +19,4 @@ The outcomes of the data analysis and model prediction provide moderate informat
 ---
 
 To identify high growth company & predict its potential for successful IPO / acquisition
-![Goal_ipo_acquired logo](assets/img/portfolio/Goal_ipo_acquired.jpeg)
+![Goal_ipo_acquired logo]({{ site.baseurl }}/assets/img/portfolio/Goal_ipo_acquired.jpeg)
