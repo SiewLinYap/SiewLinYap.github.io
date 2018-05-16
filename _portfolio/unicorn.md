@@ -145,7 +145,7 @@ df_wordcount
 
 
 {% highlight js %}
-# market sector sorted by amount raised_usd from top 10 investors
+// market sector sorted by amount raised_usd from top 10 investors
 
 df_MarketSector.sort_values('Raised Amount Usd', ascending=True).plot(y='Raised Amount Usd', x='Market_Sector', kind='barh', figsize=(15,10),colormap='tab20c')
 plt.title('Total Investment Amount in USD by Market Sector')
@@ -158,16 +158,16 @@ plt.show()
 
 
 {% highlight js %}
-# refine network graph to have visibility on Market Sectors & the common interest among various top 10 investors
-# overview including investor path
+// refine network graph to have visibility on Market Sectors & the common interest among various top 10 investors
+// overview including investor path
 
 G = nx.Graph()
 
-# set up nodes
+// set up nodes
 for node in nodes:
     G.add_node(node)
 
-# set up edges
+// set up edges
 edlabel = []
 graph_tuple = []
 for i,r in edges_df.iterrows():
@@ -175,10 +175,10 @@ for i,r in edges_df.iterrows():
     edlabel.append(r['Edge_labels'])
     graph_tuple.append((r['Source'], r['Target']))
     
-# set up edges_labels
+// set up edges_labels
 edge_labels = dict(zip(graph_tuple, edlabel))
 
-# network graph plot
+// network graph plot
 plt.figure(figsize=(18,12))
 pos = nx.shell_layout(G)
 
