@@ -101,7 +101,7 @@ df_top10_investors
 
 {% endhighlight %}
 
-![Top10_investors_table logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg)
+![Top10_investors_table logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg =400x380)
 
 
 {% highlight js %}
@@ -112,7 +112,7 @@ plt.title('Total Investment Amount in USD by Top 10 Investors')
 plt.show()
 {% endhighlight %}
 
-![Top10_investors_graph logo](Top10_investors_graph.jpeg)
+![Top10_investors_graph logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_graph.jpeg)
 
 ### 2. Market Sectors In Focus by Top10 Key Investors
 
@@ -141,7 +141,7 @@ df_wordcount.rename(columns={'index': 'Feature', 0: 'VectorizerCount'}, inplace=
 df_wordcount
 {% endhighlight %}
 
-![Vectorizer_counts logo](Vectorizer_counts.jpeg)
+![Vectorizer_counts logo]({{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg)
 
 
 {% highlight js %}
@@ -152,7 +152,7 @@ plt.title('Total Investment Amount in USD by Market Sector')
 plt.show()
 {% endhighlight %}
 
-![Market_sector_in_focus logo](Market_sector_in_focus.jpeg)
+![Market_sector_in_focus logo]({{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg)
 
 ### 3. Similarity of Investment Portfolio via Network Graph
 
@@ -190,4 +190,4 @@ plt.show()
 
 {% endhighlight %}
 
-![Network_graph logo](Network_graph.jpeg)
+![Network_graph logo]({{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg)
