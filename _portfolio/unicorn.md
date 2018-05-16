@@ -101,7 +101,8 @@ df_top10_investors
 
 {% endhighlight %}
 
-![Top10_investors_table logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg =100x80)
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg" width="100" height="80" />
 
 
 {% highlight js %}
@@ -141,7 +142,7 @@ df_wordcount.rename(columns={'index': 'Feature', 0: 'VectorizerCount'}, inplace=
 df_wordcount
 {% endhighlight %}
 
-![Vectorizer_counts logo]({{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg =100x80)
+![Vectorizer_counts logo]({{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg)
 
 
 {% highlight js %}
