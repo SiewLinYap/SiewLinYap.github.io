@@ -104,20 +104,20 @@ df_top10_investors
 ![Top10_investors_table logo](Top10_investors_table.jpeg)
 
 
-```python
+{% highlight js %}
 # top 10 investors by amount raised_usd
 
 df_top10_investors.sort_values('Raised Amount Usd', ascending=True).plot(x='Investor Name', y='Raised Amount Usd', kind='barh', figsize=(15,4), colormap='plasma')
 plt.title('Total Investment Amount in USD by Top 10 Investors')
 plt.show()
-```
+{% endhighlight %}
 
 ![Top10_investors_graph logo](Top10_investors_graph.jpeg)
 
 ### 2. Market Sectors In Focus by Top10 Key Investors
 
 
-```python
+{% highlight js %}
 # attempt to use TF-IDF vectorizer on company category to check which key words are higher importance/appearance
 # for better decision making to map the most relevant ones together as one new market sector
 
@@ -139,25 +139,25 @@ df_wordcount = pd.DataFrame(wordcount)
 df_wordcount = df_wordcount.reset_index()
 df_wordcount.rename(columns={'index': 'Feature', 0: 'VectorizerCount'}, inplace=True)
 df_wordcount
-```
+{% endhighlight %}
 
 ![Vectorizer_counts logo](Vectorizer_counts.jpeg)
 
 
-```python
+{% highlight js %}
 # market sector sorted by amount raised_usd from top 10 investors
 
 df_MarketSector.sort_values('Raised Amount Usd', ascending=True).plot(y='Raised Amount Usd', x='Market_Sector', kind='barh', figsize=(15,10),colormap='tab20c')
 plt.title('Total Investment Amount in USD by Market Sector')
 plt.show()
-```
+{% endhighlight %}
 
 ![Market_sector_in_focus logo](Market_sector_in_focus.jpeg)
 
 ### 3. Similarity of Investment Portfolio via Network Graph
 
 
-```python
+{% highlight js %}
 # refine network graph to have visibility on Market Sectors & the common interest among various top 10 investors
 # overview including investor path
 
@@ -188,6 +188,6 @@ nx.draw_networkx_labels(G,pos,labels=nodes_label)
 nx.draw_networkx_edge_labels(G,pos, edge_labels=edge_labels)
 plt.show()
 
-```
+{% endhighlight %}
 
 ![Network_graph logo](Network_graph.jpeg)
