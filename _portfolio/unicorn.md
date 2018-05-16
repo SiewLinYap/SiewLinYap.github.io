@@ -95,10 +95,10 @@ Data cleansing and filtration based on scopes defined and perform preliminary ba
 ### 1. Finalization of Top10 Key Investors
 
 {% highlight js %}
-```python
+
 df_top10_investors = df_top10_investors[['Investor Name', 'Raised Amount Usd']]
 df_top10_investors
-```
+
 {% endhighlight %}
 
 ![Top10_investors_table logo](Top10_investors_table.jpeg)
