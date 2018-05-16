@@ -29,8 +29,8 @@ To identify high growth company & predict its potential for successful IPO / acq
 ---
 
 * Focusing on True Positive Rate [ Sensitivity ] 
-&npsp; * Company predicted as Acquired/IPO does get acquired/IPO in real world
-&npsp; * Target [Recall Score](https://en.wikipedia.org/wiki/Precision_and_recall) for True Positive > 70%
+      * Company predicted as Acquired/IPO does get acquired/IPO in real world
+      * Target [Recall Score](https://en.wikipedia.org/wiki/Precision_and_recall) for True Positive > 70%
 
 
 * Dianogstic of Binary Classification Performance
