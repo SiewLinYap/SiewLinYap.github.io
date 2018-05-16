@@ -15,6 +15,7 @@ The objective of the project is to attempt using limited information and small s
 The outcomes of the data analysis and model prediction provide moderate information on the competitive landscape across various market sectors to mitigate risks while modelling the growth potential of various companies in focus by the Top 10 key investors. 
 
 
+
 ## Goal
 ---
 
