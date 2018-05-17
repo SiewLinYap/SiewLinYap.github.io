@@ -114,7 +114,8 @@ plt.title('Total Investment Amount in USD by Top 10 Investors')
 plt.show()
 {% endhighlight %}
 
-![Top10_investors_graph logo]({{ site.baseurl }}/assets/img/portfolio/Top10_investors_graph.jpeg)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_investors_graph.jpeg" width="1200" height="620">
+
 
 #### 2. Market Sectors In Focus by Top10 Key Investors
 
