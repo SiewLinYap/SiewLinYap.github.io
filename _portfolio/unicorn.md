@@ -156,7 +156,7 @@ plt.title('Total Investment Amount in USD by Market Sector')
 plt.show()
 {% endhighlight %}
 
-![Market_sector_in_focus logo]({{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg" width="5000" height="400">
 
 #### 3. Similarity of Investment Portfolio via Network Graph
 
