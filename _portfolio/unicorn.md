@@ -145,7 +145,7 @@ df_wordcount.rename(columns={'index': 'Feature', 0: 'VectorizerCount'}, inplace=
 df_wordcount
 {% endhighlight %}
 
-![Vectorizer_counts logo]({{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg" width="600" height="420">
 
 
 {% highlight js %}
