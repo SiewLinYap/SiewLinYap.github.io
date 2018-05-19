@@ -480,7 +480,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 from sklearn.preprocessing import StandardScaler
 
 ss = StandardScaler()
-
 Xs_train = ss.fit_transform(X_train)
 Xs_test = ss.fit_transform(X_test)
 {% endhighlight %}
@@ -514,7 +513,7 @@ X shape: (1874, 27), y shape: (1874,)
 
 
 {% highlight js %}
-// Define a function used to plot confusion matrix for all evaluated models for ease of visualization
+// A function used to plot confusion matrix for all evaluated models
 
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
@@ -553,12 +552,14 @@ def plot_confusion_matrix(cm, classes,
 
 
 {% highlight js %}
-// --------------------------------------------------------------
-//Base model for Sampling Method Trial : Logistic RegressionCV
-//--------------------------------------------------------------
-//from sklearn.linear_model import LogisticRegressionCV
-//from sklearn.metrics import confusion_matrix, classification_report
+'''
+--------------------------------------------------------------
+Base model for Sampling Method Trial : Logistic RegressionCV
+--------------------------------------------------------------
+'''
 
+from sklearn.linear_model import LogisticRegressionCV
+from sklearn.metrics import confusion_matrix, classification_report
 
 print('------------------------------------------------------------------')
 print('Performance Check for Model  :  LogisticRegressionCV_SS+RoS')
@@ -620,7 +621,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="1000" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="1200" height="600">
 
 
 ### Summary of Sampling Method Evaluation
@@ -632,16 +633,13 @@ df_summary_SampMethod = pd.DataFrame(columns=['Sampling Method','ROC_AUC score',
 {% endhighlight %}
 
 {% highlight js %}
-samplingMethod = ['Over Sampling_RandomOverSampler','Over Sampling_SMOTE','Combine Sampling_SMOTEENN',
-                  'Combine Sampling_SMOTETomek','Under Sampling_RandomUnderSampler','Under Sampling_CondensedNearestNeighbour']
+samplingMethod = ['Over Sampling_RandomOverSampler','Over Sampling_SMOTE','Combine Sampling_SMOTEENN','Combine Sampling_SMOTETomek','Under Sampling_RandomUnderSampler','Under Sampling_CondensedNearestNeighbour']
 {% endhighlight %}
 
 {% highlight js %}
 rocScore_SampM = [s1_roc_auc_score, s2_roc_auc_score,s3_roc_auc_score,s4_roc_auc_score,s5_roc_auc_score,s6_roc_auc_score]
 
-recallScore_SampM = [round(recall_score(y_test, s1_y_predictions_LOGR1),4), round(recall_score(y_test, s2_y_predictions_LOGR1),4),
-          round(recall_score(y_test, s3_y_predictions_LOGR1),4), round(recall_score(y_test, s4_y_predictions_LOGR1),4), 
-          round(recall_score(y_test, s5_y_predictions_LOGR1),4), round(recall_score(y_test, s6_y_predictions_LOGR1),4)]
+recallScore_SampM = [round(recall_score(y_test, s1_y_predictions_LOGR1),4), round(recall_score(y_test, s2_y_predictions_LOGR1),4), round(recall_score(y_test, s3_y_predictions_LOGR1),4), round(recall_score(y_test, s4_y_predictions_LOGR1),4), round(recall_score(y_test, s5_y_predictions_LOGR1),4), round(recall_score(y_test, s6_y_predictions_LOGR1),4)]
 {% endhighlight %}
 
 {% highlight js %}
@@ -651,7 +649,7 @@ df_summary_SampMethod['Recall_score_Class1'] = recallScore_SampM
 df_summary_SampMethod
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="600" height="380">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="800" height="300">
 
 
 With base model of LogisticRegression CV, scoring for various sampling methods were compared. From the summary table,
@@ -759,7 +757,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="1000" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="1200" height="600">
 
 
 ### Summary of Predictive Model Selection
@@ -772,16 +770,9 @@ df_summary_model = pd.DataFrame(columns=['Model','ROC_AUC score','Recall score_C
 model = ['Logistic Regression CV', 'KNeighbors Classifier','SGD Classifier','Gradient Boosting Classifier',
          'Support Vector Classifier', 'Random Forest Classifier']
 
-rocScore_ModSel = [round(roc_auc_score(y_test, y_prob_predict_LOGR1_GR[:,1]),4), 
-                   round(roc_auc_score(y_test, y_prob_predict_KNC1_GS[:,1]),4), 
-                   round(roc_auc_score(y_test, y_prob_predict_SGD1_GS[:,1]),4), 
-                   round(roc_auc_score(y_test, y_prob_predict_GBC1_GS[:,1]),4), 
-                   round(roc_auc_score(y_test, y_prob_predict_SVC1_GS[:,1]),4),
-                   round(roc_auc_score(y_test, y_prob_predict_RFC1_GS[:,1]),4)]
+rocScore_ModSel = [round(roc_auc_score(y_test, y_prob_predict_LOGR1_GR[:,1]),4), round(roc_auc_score(y_test, y_prob_predict_KNC1_GS[:,1]),4), round(roc_auc_score(y_test, y_prob_predict_SGD1_GS[:,1]),4), round(roc_auc_score(y_test, y_prob_predict_GBC1_GS[:,1]),4), round(roc_auc_score(y_test, y_prob_predict_SVC1_GS[:,1]),4),round(roc_auc_score(y_test, y_prob_predict_RFC1_GS[:,1]),4)]
 
-recallScore_ModSel = [round(recall_score(y_test, y_predict_LOGR1_GS),4), round(recall_score(y_test, y_predict_KNC1_GS),4),
-                      round(recall_score(y_test, y_predict_SGD1_GS),4), round(recall_score(y_test, y_predict_GBC1_GS),4),
-                      round(recall_score(y_test, y_predict_SVC1_GS),4), round(recall_score(y_test, y_predict_RFC1_GS),4)]
+recallScore_ModSel = [round(recall_score(y_test, y_predict_LOGR1_GS),4), round(recall_score(y_test, y_predict_KNC1_GS),4), round(recall_score(y_test, y_predict_SGD1_GS),4), round(recall_score(y_test, y_predict_GBC1_GS),4), round(recall_score(y_test, y_predict_SVC1_GS),4), round(recall_score(y_test, y_predict_RFC1_GS),4)]
 
 
 df_summary_model['Model'] = model
@@ -790,7 +781,7 @@ df_summary_model['Recall score_Class 1'] = recallScore_ModSel
 df_summary_model
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="600" height="380">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="800" height="300">
 
 With Grid Search on various models and various parameter trials, the best ROC_AUC score is in the range of 0.60-0.67. Random Forest Classifier was found having the highest ROC_AUC score at 0.66 with Recall score for Class 1 
 stood 2nd highest at 0.69
@@ -882,7 +873,7 @@ confusion = pd.DataFrame(conmat, index=['isNot_acquired_IPO', 'is_acquired_IPO']
 confusion
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Validation_outcome.jpeg" width="1000" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Validation_outcome.jpeg" width="1000" height="600">
 
 17.49% of companies under false positive were actually acquired/IPO after 2015. Overall recall score for class 1 after factored in the latest company status now inceased from 0.69 to 0.79 ~~
 
