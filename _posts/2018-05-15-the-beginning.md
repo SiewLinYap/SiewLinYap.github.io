@@ -1,6 +1,7 @@
 ---
 layout: post
 title: It's not the end. It's just the beginning
+feature-img: "assets/img/pexels/rainbow.jpeg"
 thumbnail: "assets/img/thumbnails/rainbow.jpeg"
 tags: [Test, Lorem]
 ---
