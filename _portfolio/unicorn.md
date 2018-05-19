@@ -819,7 +819,7 @@ df_RFC_features.sort_values(['Feature_Importance'], ascending=False, inplace=Tru
 df_RFC_features[df_RFC_features['Feature_Importance']>0]
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Feature_importance.jpeg" width="600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Feature_importance.jpeg" width="700" height="800">
 
 
 <a id="Validation"></a>
