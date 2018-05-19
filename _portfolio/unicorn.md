@@ -3,7 +3,7 @@ layout: post
 title: Where's the UNICORN ?
 img: "assets/img/portfolio/unicorn.png"
 date: May, 18 2018
-tags: [Lorem]
+
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
