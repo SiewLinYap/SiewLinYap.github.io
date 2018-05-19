@@ -198,7 +198,7 @@ MERGE (m:MktSector {sector: line.Market_Sector_neo})
 CREATE (i)-[:INVESTED_IN]->(m);
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="100" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="2000" height="600">
 
 
 ## Analysis on Acquired Companies
@@ -251,7 +251,7 @@ sns.despine(ax=ax_hist)
 sns.despine(ax=ax_box, left=True)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_acquired_comp_overview.jpeg" width="800" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_acquired_comp_overview.jpeg" width="1000" height="600">
 
 
 {% highlight js %}
@@ -262,7 +262,7 @@ plt.title('No. of Company Exited due to Acquisition')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="800" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="1000" height="450">
 
 {% highlight js %}
 df_acquired_sortby_MS = startup_2010onwards.groupby('Market_Sector')['name'].count().to_frame()
@@ -310,7 +310,7 @@ Average | Median
 Similar stats analysis approach as done for Acquired companies was repeated and used to study IPO companies. Below are the graphical analytic outcomes for IPO companies :
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_ipo_comp_overview.jpeg" width="800" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_ipo_comp_overview.jpeg" width="1000" height="600">
 
 {% highlight js %}
 // to check which market sector having the highest chance of going for IPO
@@ -320,7 +320,7 @@ plt.title('No. of IPO Companies by Market Sector')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="800" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="1000" height="450">
 
 {% highlight js %}
 df_ipo_sortby_MS = df_ipo.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -340,9 +340,9 @@ plt.title('Funding Total in USD by IPO Company')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="800" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="600" height="420">
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="800" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="420">
 
 ### Summary of companies under Top10 investor list that were IPO successfully :
 
