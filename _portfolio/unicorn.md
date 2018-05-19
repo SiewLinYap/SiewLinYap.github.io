@@ -342,7 +342,7 @@ plt.show()
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="1200" height="420">
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="380">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="580" height="380">
 
 ### Summary of companies under Top10 investor list that were IPO successfully :
 
