@@ -621,7 +621,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="2200" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="2200" height="450">
 
 
 ### Summary of Sampling Method Evaluation
@@ -649,7 +649,7 @@ df_summary_SampMethod['Recall_score_Class1'] = recallScore_SampM
 df_summary_SampMethod
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="700" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="700" height="250">
 
 
 With base model of LogisticRegression CV, scoring for various sampling methods were compared. From the summary table,
@@ -757,7 +757,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="2000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="2000" height="550">
 
 
 ### Summary of Predictive Model Selection
@@ -781,7 +781,7 @@ df_summary_model['Recall score_Class 1'] = recallScore_ModSel
 df_summary_model
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="700" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="700" height="250">
 
 With Grid Search on various models and various parameter trials, the best ROC_AUC score is in the range of 0.60-0.67. Random Forest Classifier was found having the highest ROC_AUC score at 0.66 with Recall score for Class 1 
 stood 2nd highest at 0.69
