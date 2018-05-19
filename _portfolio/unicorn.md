@@ -114,7 +114,7 @@ plt.show()
 
 
 {% highlight js %}
-// attempt to use TF-IDF vectorizer on company category to check which key words are of higher importance/appearance
+// attempt to use TF-IDF vectorizer on company category to check which key words have higher importance/appearance
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 tvec = TfidfVectorizer(stop_words='english', min_df=1, ngram_range=(1,2), max_features=1000)
