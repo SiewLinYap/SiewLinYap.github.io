@@ -330,7 +330,7 @@ df_ipo_sortby_MS.sort_values('No._IPO_Company', ascending=False, inplace=True)
 df_ipo_sortby_MS
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_table.jpeg" width="600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_table.jpeg" width="600" height="420">
 
 {% highlight js %}
 // to check which IPO companies having the highest funding_total
@@ -340,9 +340,9 @@ plt.title('Funding Total in USD by IPO Company')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="600" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="100" height="450">
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="400">
 
 ### Summary of companies under Top10 investor list that were IPO successfully :
 
