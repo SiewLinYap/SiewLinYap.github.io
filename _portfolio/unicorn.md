@@ -70,11 +70,11 @@ Since available data set was back to 2015, start up companies to focus for the a
 Data cleansing and filtration based on scopes defined and perform preliminary basic analysis to get the most relevant data out for next level of details analysis
 
 #### 3. Exploratory Data Analysis
-* Extration of Top10 Key Investors based on the Total Investment Amount in USD
-* Reclassification of Market Sector to simplify and group scatterred sectors into the closest business fields
+* Extraction of Top10 Key Investors based on the Total Investment Amount in USD
+* Reclassification of Market Sector and group scatterred sectors into the closest business fields
 * Similarity of Investment Porfolio via Network Graph
 * Missing Values Handling and Replacement via Web-Scrapping
-* Analytics and Stats for
+* Preliminary Statistical Analysis for
     * Acquired companies
     * IPO companies
     * Closed down companies
@@ -94,14 +94,6 @@ Data cleansing and filtration based on scopes defined and perform preliminary ba
 ---
 
 #### 1. Finalization of Top10 Key Investors
-
-{% highlight js %}
-
-df_top10_investors = df_top10_investors[['Investor Name', 'Raised Amount Usd']]
-df_top10_investors
-
-{% endhighlight %}
-
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Top10_investors_table.jpeg" width="600" height="420">
 
@@ -123,7 +115,6 @@ plt.show()
 
 {% highlight js %}
 // attempt to use TF-IDF vectorizer on company category to check which key words are higher importance/appearance
-// for better decision making to map the most relevant ones together as one new market sector
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 tvec = TfidfVectorizer(stop_words='english', min_df=1, ngram_range=(1,2), max_features=1000)
@@ -131,12 +122,6 @@ tvec = TfidfVectorizer(stop_words='english', min_df=1, ngram_range=(1,2), max_fe
 
 tvec.fit(df_top10investor_choice['company_category_list_2'])
 df_catModified_tvec = pd.DataFrame(tvec.transform(df_top10investor_choice['company_category_list_2']).todense(), columns=['Category_'+ v for v in tvec.get_feature_names()], index=df_top10investor_choice['company_category_list_2'].index)
-// to add prefix of Category in column name, so it is clearer that these features are originally from category column
-// when putting the post TF-IDF processed data into new dataframe later on combining with other post TF_IDF data
-// to include index=df_top10investor_choice['company_category_list_2'].index in order to have the index consistent and avoid mismatch of index
-// when using pd.concat with other df later on
-
-df_catModified_tvec.sum().sort_values(ascending=False)
 
 wordcount = df_catModified_tvec.sum().sort_values(ascending=False)
 df_wordcount = pd.DataFrame(wordcount)
@@ -162,9 +147,10 @@ plt.show()
 
 
 {% highlight js %}
-// refine network graph to have visibility on Market Sectors & the common interest among various top 10 investors
-// overview including investor path
+// refine network graph to have visibility on Market Sectors & the common interest among various top 10 investors. An overview that includes investors' path.
 
+import networkx as nx
+import matplotlib.pyplot as plt
 G = nx.Graph()
 
 // set up nodes
@@ -194,4 +180,5 @@ plt.show()
 
 {% endhighlight %}
 
-![Network_graph logo]({{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg" width="5000" height="400">
+
