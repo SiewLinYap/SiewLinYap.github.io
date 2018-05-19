@@ -198,7 +198,7 @@ MERGE (m:MktSector {sector: line.Market_Sector_neo})
 CREATE (i)-[:INVESTED_IN]->(m);
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="800" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="100" height="600">
 
 
 ## Analysis on Acquired Companies
