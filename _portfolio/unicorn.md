@@ -281,17 +281,19 @@ df_acquired_sortby_MS
 * 11.70% acquisition successful rate
 
 #### For companies founded since 1994 
---------------------------------------------------------
+---
+
 Average | Median
 ------- | ------
 5.63 years to exit                 | 5 years
 3.09 funding_rounds                | 3
 1.56 investor from Top10 investors | 1
-\$66.67M total funding             | $30M 
+\$66.67M total funding             | $30M
 
---------------------------------------------------------
+
+---
 #### For start-ups founded 2010 onwards  [88 companies]
---------------------------------------------------------
+---
 Average | Median
 ------- | ------
 2.95 years to exit                   | 3 years
@@ -299,9 +301,9 @@ Average | Median
 1.42 investor from Top10 investors   | 1
 \$35.79M total funding               | $8.25M
 
-----------------------------------------------------------------------
+---
 #### Top 3 market sectors with higher no. of companies being acquired 
-----------------------------------------------------------------------
+---
 * Software|Apps
 * Content Creation|Entertainment|Curated Web|Design
 * Internet|Web|Search|Communication|Social Media
