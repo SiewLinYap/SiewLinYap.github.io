@@ -425,7 +425,7 @@ Average | Median
 #### Top 3 Market Sectors having the highest no. of Closed Down companies:
 
 - eCommerce\\Marketplace                               : 10
-- Content Creation\\Entertainment\Curated Web|Design   : 7
+- ContentCreation\\Entertainment\Curated Web|Design   : 7
 - BioTech\\Health Care                                 : 6
 - Software\\Apps                                       : 6
 
