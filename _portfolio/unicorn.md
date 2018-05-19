@@ -340,7 +340,7 @@ plt.title('Funding Total in USD by IPO Company')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="1200" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="1200" height="380">
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="560" height="380">
 
