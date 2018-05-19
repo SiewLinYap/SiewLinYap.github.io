@@ -281,7 +281,6 @@ df_acquired_sortby_MS
 * 11.70% acquisition successful rate
 
 #### For companies founded since 1994 
----
 
 Average | Median
 ------- | ------
@@ -293,7 +292,7 @@ Average | Median
 
 ---
 #### For start-ups founded 2010 onwards  [88 companies]
----
+
 Average | Median
 ------- | ------
 2.95 years to exit                   | 3 years
@@ -303,10 +302,10 @@ Average | Median
 
 ---
 #### Top 3 market sectors with higher no. of companies being acquired 
----
-* Software|Apps
-* Content Creation|Entertainment|Curated Web|Design
-* Internet|Web|Search|Communication|Social Media
+
+* \Software\Apps
+* \Content Creation\Entertainment\Curated Web\Design
+* \Internet\Web\Search\Communication\Social Media
 
 ## Analysis on IPO Companies
 Similar stats analysis approach as done for Acquired companies was repeated and used to study IPO companies. Below are the graphical analytic outcomes for IPO companies :
