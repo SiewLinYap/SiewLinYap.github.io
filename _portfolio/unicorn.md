@@ -180,7 +180,7 @@ nx.draw_networkx_edge_labels(G,pos, edge_labels=edge_labels)
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg" width="800" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg" width="2000" height="600">
 
 
 * 2nd Visualization via Neo4j Graph Platform
