@@ -141,7 +141,7 @@ plt.title('Total Investment Amount in USD by Market Sector')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg" width="5000" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Market_sector_in_focus.jpeg" width="800" height="420">
 
 
 #### 3. Similarity of Investment Portfolio via Network Graph
@@ -180,7 +180,7 @@ nx.draw_networkx_edge_labels(G,pos, edge_labels=edge_labels)
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Network_graph.jpeg" width="800" height="600">
 
 
 * 2nd Visualization via Neo4j Graph Platform
@@ -198,7 +198,7 @@ MERGE (m:MktSector {sector: line.Market_Sector_neo})
 CREATE (i)-[:INVESTED_IN]->(m);
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Neo4j_graph.jpeg" width="800" height="600">
 
 
 ## Analysis on Acquired Companies
@@ -251,7 +251,7 @@ sns.despine(ax=ax_hist)
 sns.despine(ax=ax_box, left=True)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_acquired_comp_overview.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_acquired_comp_overview.jpeg" width="800" height="600">
 
 
 {% highlight js %}
@@ -262,7 +262,7 @@ plt.title('No. of Company Exited due to Acquisition')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="800" height="420">
 
 {% highlight js %}
 df_acquired_sortby_MS = startup_2010onwards.groupby('Market_Sector')['name'].count().to_frame()
@@ -272,7 +272,7 @@ df_acquired_sortby_MS.sort_values('No_acquired_comp', ascending=False, inplace=T
 df_acquired_sortby_MS
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_table.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_table.jpeg" width="600" height="420">
 
 
 ### Summary of companies under Top10 investor list that were exited due to acquisition :
@@ -310,7 +310,7 @@ Average | Median
 Similar stats analysis approach as done for Acquired companies was repeated and used to study IPO companies. Below are the graphical analytic outcomes for IPO companies :
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_ipo_comp_overview.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_ipo_comp_overview.jpeg" width="800" height="600">
 
 {% highlight js %}
 // to check which market sector having the highest chance of going for IPO
@@ -320,7 +320,7 @@ plt.title('No. of IPO Companies by Market Sector')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="800" height="420">
 
 {% highlight js %}
 df_ipo_sortby_MS = df_ipo.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -330,7 +330,7 @@ df_ipo_sortby_MS.sort_values('No._IPO_Company', ascending=False, inplace=True)
 df_ipo_sortby_MS
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_table.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_table.jpeg" width="600" height="400">
 
 {% highlight js %}
 // to check which IPO companies having the highest funding_total
@@ -340,9 +340,9 @@ plt.title('Funding Total in USD by IPO Company')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="800" height="420">
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="800" height="400">
 
 ### Summary of companies under Top10 investor list that were IPO successfully :
 
@@ -375,7 +375,7 @@ Average | Median
 ## Analysis on Closed Down Companies
 Similar stats analysis approach was again repeated and used to study Closed Down companies. Below are the graphical analytic outcomes for Closed Down companies :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_closed_comp_overview.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_closed_comp_overview.jpeg" width="800" height="600">
 
 {% highlight js %}
 // to check which market sector having the highest no. of closed companies
@@ -386,7 +386,7 @@ plt.show()
 
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="800" height="420">
 
 {% highlight js %}
 df_closed_sortby_MS = df_closed.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -396,7 +396,7 @@ df_closed_sortby_MS.sort_values('No._closed_Company', ascending=False, inplace=T
 df_closed_sortby_MS
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_table.jpeg" width="5000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_table.jpeg" width="800" height="400">
 
 ### Summary of companies under Top10 investor list that were closed down :
 
