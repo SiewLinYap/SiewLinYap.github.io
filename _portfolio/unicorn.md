@@ -368,8 +368,11 @@ Average | Median
 
 ---
 #### Top 3 IPO companies having the highest funding total:
-Company | Total Funding
-------- | ------
+
+
+
+Company | Total_Funding
+------- | -------------
 1st Alibaba   | \$4.81 Billion
 2nd Facebook  | \$2.43 Billion
 3rd Twitter   | \$1.16 Billion
