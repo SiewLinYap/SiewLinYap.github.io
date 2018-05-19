@@ -307,6 +307,8 @@ Average | Median
 * Content Creation\\Entertainment\Curated Web\Design
 * Internet\\Web\Search\Communication\Social Media
 
+
+---
 ## Analysis on IPO Companies
 Similar stats analysis approach as done for Acquired companies was repeated and used to study IPO companies. Below are the graphical analytic outcomes for IPO companies :
 
@@ -377,6 +379,8 @@ Company | Total_Funding
 2nd Facebook  | \$2.43 Billion
 3rd Twitter   | \$1.16 Billion
 
+
+---
 ## Analysis on Closed Down Companies
 Similar stats analysis approach was again repeated and used to study Closed Down companies. Below are the graphical analytic outcomes for Closed Down companies :
 
@@ -430,10 +434,10 @@ Average | Median
 - Software\\Apps                                       : 6
 
 
+---
 <a id="ModelSelection"></a>
 
 ## Sampling Methods & Predictive Model Selection
----
 
 Current data set was found not suitable for a comprehensive Time Series Analysis due to the lack of important key figure of Date/Time and its completeness to support continuous time-dependent analysis. With this, pior to starting next core modelling, a new dataframe was set up to exclude companies with Closed Down status and companies that were either acquired or IPO were then combined as one category. The restructure of such dataframe was done in preparation for classification modelling purpose. 
 
@@ -657,7 +661,7 @@ Under Sampling_Random Under Sampler was observed having the highest ROC_AUC scor
 
 Therefore, final sampling method to use for next model selection process is < Under Sampling_Random Under Sampler >
 
-
+---
 ### 4. Predictive Model Selection
 
 With sampling method finalized above as Random Under Sampler, the data will be preprocessed using Standard scalar followed by this under sampling method in order to achive balanced dataset for subsequent modelling
@@ -786,7 +790,7 @@ df_summary_model
 With Grid Search on various models and various parameter trials, the best ROC_AUC score is in the range of 0.60-0.67. Random Forest Classifier was found having the highest ROC_AUC score at 0.66 with Recall score for Class 1 
 stood 2nd highest at 0.69
 
-### Summary of Predictive Model Best Estimator & Features Importance
+#### Predictive Model Best Estimator & Features Importance
 
 Based on earlier model evaluation on Random Forest Classifier, the best estimators & their parameters as below:
 
@@ -877,15 +881,32 @@ confusion
 
 17.49% of companies under false positive were actually acquired/IPO after 2015. Overall recall score for class 1 after factored in the latest company status now inceased from 0.69 to 0.79 ~~
 
-As original dataset cut off timeframe was back to 2015, giving longer holding period of 3-5 years on those predicted
-high potential/high growth companies, the chances of them getting acquired/listed was around 17% more, and overall would increase the True Positive Recall score to 0.79
+
+## Project Summary
+
+Based on the dataset of 2015, the performance of companies under Top10 Investor List as follows :
+
+* 196 / 1674 companies from top 10 investors list were acquired 
+    * 11.70% acquisition successful rate
+
+* 71 / 1674 companies were successfully listed
+    * 4.24% successful IPO rate
+
+* 52 / 1674 companies were closed down
+   * 3.11% failure rate
+   
+Due to imbalance dataset, sampling method was therefore applied. Based on highest ROC_AUC score and Recall Score for True Positiove, the final selected classification predictive model was Random Forest Classifier coupled with Randam Under Sampler Method. The analysis and prediction done based on 2015 data set would yield a Recall score of only 0.69 for True Positive and AUC score of 0.66. Regardless of various hyperparameters tuning and evaluation of different predictive models, the target metrics were still ranging between 0.6 to < 0.7, hitting the limitation of the evaluated features to yield better prediction score. 
+
+Subsequent validation of the False Positive data with the latest state as of 2018 showed that there was an additional 32 companies ( ~17.5% of the False Positive ) were acquired/listed after 2015. However, there was also 5 companies ( 2.7% ) were found closed down. As original dataset cut off timeframe was back to 2015, giving longer observation/holding period of 3 years on those predicted high potential/high growth companies, the chances of them getting acquired/listed was around 17% more. 
+
+The validation of False Positive with latest company state showed an increase of True Positive Recall score to 0.79 and an adjusted ROC_AUC score was at 0.72. Target of >70% would be achievable only with longer period in this project based on the evaluated predictive model.
 
 With only 5 key features :
 * funding_total
 * funding_rounds
-* no.of key investeros
-* founding year and 
+* no.of key investers
+* founding year 
 * market sectors 
 
-in addition to various scatterred data sets, the recall score for Class 1 at 0.79 (validated with data @ 2018) was therefore moderate enough to assist pre-judgement of a company long term potential
+in addition to various scatterred data sets, the performance of the model was therefore at moderate level to serve as preliminary baseline to assess a company mid-long term growth potential.
 
