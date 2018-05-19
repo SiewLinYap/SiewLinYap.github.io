@@ -303,9 +303,9 @@ Average | Median
 ---
 #### Top 3 market sectors with higher no. of companies being acquired 
 
-* \Software\Apps
-* \Content Creation\Entertainment\Curated Web\Design
-* \Internet\Web\Search\Communication\Social Media
+* Software\\Apps
+* Content Creation\\Entertainment\Curated Web\Design
+* Internet\\Web\Search\Communication\Social Media
 
 ## Analysis on IPO Companies
 Similar stats analysis approach as done for Acquired companies was repeated and used to study IPO companies. Below are the graphical analytic outcomes for IPO companies :
