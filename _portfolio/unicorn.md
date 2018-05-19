@@ -340,9 +340,9 @@ plt.title('Funding Total in USD by IPO Company')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="1000" height="450">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_graph.jpeg" width="1200" height="420">
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_comp_table.jpeg" width="600" height="380">
 
 ### Summary of companies under Top10 investor list that were IPO successfully :
 
@@ -375,7 +375,7 @@ Average | Median
 ## Analysis on Closed Down Companies
 Similar stats analysis approach was again repeated and used to study Closed Down companies. Below are the graphical analytic outcomes for Closed Down companies :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_closed_comp_overview.jpeg" width="800" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Stats_closed_comp_overview.jpeg" width="1000" height="600">
 
 {% highlight js %}
 // to check which market sector having the highest no. of closed companies
@@ -386,7 +386,7 @@ plt.show()
 
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="800" height="420">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="1000" height="450">
 
 {% highlight js %}
 df_closed_sortby_MS = df_closed.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -396,7 +396,7 @@ df_closed_sortby_MS.sort_values('No._closed_Company', ascending=False, inplace=T
 df_closed_sortby_MS
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_table.jpeg" width="800" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_table.jpeg" width="600" height="380">
 
 ### Summary of companies under Top10 investor list that were closed down :
 
