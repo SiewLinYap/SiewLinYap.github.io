@@ -464,7 +464,437 @@ y.value_counts()
 Name: Is_Acquired_IPO, dtype: int64
 '''
 // imbalance dataset observed
-
 {% endhighlight %}
 
+
+### 2. Model Preprocessing
+
+{% highlight js %}
+// train test split
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+{% endhighlight %}
+
+{% highlight js %}
+from sklearn.preprocessing import StandardScaler
+
+ss = StandardScaler()
+
+Xs_train = ss.fit_transform(X_train)
+Xs_test = ss.fit_transform(X_test)
+{% endhighlight %}
+
+
+### 3. Sampling Method Evaluation
+
+Since imbalanced dataset was observed, additional step was therefore needed to evaluate sampling methods to balance them before modelling. Logistic RegressionCV was chosen as base model to support this sampling method evaluation since it was the simplest classification model.
+
+Sampling Methods to evaluate as listed below :
+
+1. Over Sampling_RandomOverSampler
+2. Over Sampling_SMOTE
+3. Combine Sampling_SMOTEENN
+4. Combine Sampling_SMOTETomek
+5. Under Sampling_RandomUnderSampler
+6. Under Sampling_CondensedNearestNeighbour
+
+{% highlight js %}
+// Standard Scaler + Random over sample minority class
+from imblearn.over_sampling import RandomOverSampler
+
+ros = RandomOverSampler(ratio='minority', random_state=42)
+X_ros_train, y_ros_train = ros.fit_sample(Xs_train, y_train)
+print('X shape: {}, y shape: {}'.format(X_ros_train.shape, y_ros_train.shape))
+
+'''
+X shape: (1874, 27), y shape: (1874,)
+'''
+{% endhighlight %}
+
+
+{% highlight js %}
+// Define a function used to plot confusion matrix for all evaluated models for ease of visualization
+
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print('Confusion matrix, after normalization')
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+{% endhighlight %}
+
+
+{% highlight js %}
+// --------------------------------------------------------------
+//Base model for Sampling Method Trial : Logistic RegressionCV
+//--------------------------------------------------------------
+//from sklearn.linear_model import LogisticRegressionCV
+//from sklearn.metrics import confusion_matrix, classification_report
+
+
+print('------------------------------------------------------------------')
+print('Performance Check for Model  :  LogisticRegressionCV_SS+RoS')
+print('with Preprocessing Method    :  Over Sampling - RandomOverSampler')
+print('------------------------------------------------------------------')
+print('\n')
+
+// with random over sampler + std scaler
+s1_model_LOGR1 = LogisticRegressionCV(cv=5)
+s1_model_LOGR1.fit(X_ros_train, y_ros_train)
+s1_y_predictions_LOGR1 = s1_model_LOGR1.predict(Xs_test)
+s1_y_prob_predictions_LOGR1 = s1_model_LOGR1.predict_proba(Xs_test)
+print('score_LogisticRegressionCV_SS+ROS \t= {}'.format(round(s1_model_LOGR1.score(Xs_test, y_test),4)))
+print('\n')
+
+// Compute confusion matrix
+cnf_matrix = confusion_matrix(y_test, s1_y_predictions_LOGR1)
+np.set_printoptions(precision=2)
+class_names = ['Operating','Acquired/IPO']
+
+// Plot non-normalized confusion matrix
+plt.figure()
+plot_confusion_matrix(cnf_matrix, classes=class_names,
+                      title='Confusion matrix, without normalization')
+plt.show()
+
+// Plot normalized confusion matrix
+plt.figure()
+plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
+                      title='Confusion matrix, after normalization')
+plt.show()
+
+
+print('Classification report :')
+print('------------------------')
+print(classification_report(y_test, s1_y_predictions_LOGR1))
+print('\n')
+
+s1_roc_auc_score = round(roc_auc_score(y_test, s1_y_prob_predictions_LOGR1[:,1]),4)
+print('ROC_AUC score :')
+print('----------------')
+print(s1_roc_auc_score)
+
+
+// Plot roc_auc graph to show area under the curve
+
+fpr, tpr, _ = roc_curve(y_test, s1_y_prob_predictions_LOGR1[:,1])
+roc_auc = auc(fpr, tpr)
+
+plt.figure(figsize=[6,6])
+plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc, linewidth=4)
+plt.plot([0, 1], [0, 1], 'k--', linewidth=4)
+plt.xlim([-0.05, 1.0])
+plt.ylim([-0.05, 1.05])
+plt.xlabel('False Positive Rate', fontsize=12)
+plt.ylabel('True Positive Rate', fontsize=12)
+plt.title('Companies from Top10 Investor List : Is_Acquired_or_IPO', fontsize=12)
+plt.legend(loc="lower right")
+plt.show()
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="1000" height="800">
+
+
+### Summary of Sampling Method Evaluation
+
+Set up a summary to tabulate ROC_AUC score and the recall score for Class 1 for the various evaluated sampling methods for easy reference to decide which one to choose for further comprehesive modeling selection
+
+{% highlight js %}
+df_summary_SampMethod = pd.DataFrame(columns=['Sampling Method','ROC_AUC score','Recall_score_Class1'])
+{% endhighlight %}
+
+{% highlight js %}
+samplingMethod = ['Over Sampling_RandomOverSampler','Over Sampling_SMOTE','Combine Sampling_SMOTEENN',
+                  'Combine Sampling_SMOTETomek','Under Sampling_RandomUnderSampler','Under Sampling_CondensedNearestNeighbour']
+{% endhighlight %}
+
+{% highlight js %}
+rocScore_SampM = [s1_roc_auc_score, s2_roc_auc_score,s3_roc_auc_score,s4_roc_auc_score,s5_roc_auc_score,s6_roc_auc_score]
+
+recallScore_SampM = [round(recall_score(y_test, s1_y_predictions_LOGR1),4), round(recall_score(y_test, s2_y_predictions_LOGR1),4),
+          round(recall_score(y_test, s3_y_predictions_LOGR1),4), round(recall_score(y_test, s4_y_predictions_LOGR1),4), 
+          round(recall_score(y_test, s5_y_predictions_LOGR1),4), round(recall_score(y_test, s6_y_predictions_LOGR1),4)]
+{% endhighlight %}
+
+{% highlight js %}
+df_summary_SampMethod['Sampling Method'] = samplingMethod
+df_summary_SampMethod['ROC_AUC score'] = rocScore_SampM
+df_summary_SampMethod['Recall_score_Class1'] = recallScore_SampM
+df_summary_SampMethod
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="600" height="380">
+
+
+With base model of LogisticRegression CV, scoring for various sampling methods were compared. From the summary table,
+Under Sampling_Random Under Sampler was observed having the highest ROC_AUC score with recall_score for Class1 was also relatively higher compared to other sampling methods.
+
+Therefore, final sampling method to use for next model selection process is < Under Sampling_Random Under Sampler >
+
+
+### 4. Predictive Model Selection
+
+With sampling method finalized above as Random Under Sampler, the data will be preprocessed using Standard scalar followed by this under sampling method in order to achive balanced dataset for subsequent modelling
+
+Classification models to evaluate as listed below :
+
+1. Logistic Regression CV
+2. KNeighbors Classifier
+3. SGD Classifier
+4. Gradient Boosting Classifier
+5. Support Vector Classifier
+6. Random Forest Classifier'
+
+
+{% highlight js %}
+from imblearn.under_sampling import RandomUnderSampler
+
+rds = RandomUnderSampler(ratio='majority', random_state=42)
+X_rds_train, y_rds_train = rds.fit_sample(Xs_train, y_train)
+print('X shape: {}, y shape: {}'.format(X_rds_train.shape, y_rds_train.shape))
+
+'''
+X shape: (370, 27), y shape: (370,)
+'''
+{% endhighlight %}
+
+
+{% highlight js %}
+// -------------------------------------
+// 6th trial : Random Forest Classifier 
+// -------------------------------------
+
+import itertools
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc, roc_auc_score
+
+// with random over sampler + std scaler
+model_RFC1 = RandomForestClassifier(random_state=42)
+
+model_RFC1_params = {'n_estimators':np.arange(45,55,1), 
+                     'criterion':['gini','entropy'], 
+                     'max_features':['log2','auto'],
+                     'max_depth':[3,4,5,6]}
+
+RFC1_GS = GridSearchCV(model_RFC1, model_RFC1_params, n_jobs=3, cv=5, verbose=1)
+RFC1_GS.fit(X_rds_train, y_rds_train)
+y_predict_RFC1_GS = RFC1_GS.predict(Xs_test)
+y_prob_predict_RFC1_GS = RFC1_GS.predict_proba(Xs_test)
+print(RFC1_GS.best_params_)
+print('\n')
+print('---------------------------------------------------------------')
+print('Performance Check for Model : Random Forest Classifier_SS+RoS')
+print('---------------------------------------------------------------')
+print('\n')
+
+// Compute confusion matrix
+cnf_matrix = confusion_matrix(y_test, y_predict_RFC1_GS)
+np.set_printoptions(precision=2)
+class_names = ['Operating','Acquired/IPO']
+
+// Plot non-normalized confusion matrix
+plt.figure()
+plot_confusion_matrix(cnf_matrix, classes=class_names,
+                      title='Confusion matrix, without normalization')
+plt.show()
+
+// Plot normalized confusion matrix
+plt.figure()
+plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
+                      title='Confusion matrix, after normalization')
+plt.show()
+
+print('-----------------------------------------------------------------------------------------------------------')
+print('Classification report :')
+print('------------------------')
+print(classification_report(y_test, y_predict_RFC1_GS))
+print('-----------------------------------------------------------------------------------------------------------')
+print('ROC_AUC score :')
+print('----------------')
+print(round(roc_auc_score(y_test, y_prob_predict_RFC1_GS[:,1]),4))
+
+
+// To plot roc_auc graph to show area under the curve
+
+fpr, tpr, _ = roc_curve(y_test, y_prob_predict_RFC1_GS[:,1])
+roc_auc = auc(fpr, tpr)
+
+plt.figure(figsize=[6,6])
+plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc, linewidth=4)
+plt.plot([0, 1], [0, 1], 'k--', linewidth=4)
+plt.xlim([-0.05, 1.0])
+plt.ylim([-0.05, 1.05])
+plt.xlabel('False Positive Rate', fontsize=12)
+plt.ylabel('True Positive Rate', fontsize=12)
+plt.title('Companies from Top10 Investor List : Is_Acquired_or_IPO', fontsize=12)
+plt.legend(loc="lower right")
+plt.show()
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="1000" height="800">
+
+
+### Summary of Predictive Model Selection
+
+Tabulate summary of model performance for ease of model finalization and conclusion wrap up
+
+{% highlight js %}
+df_summary_model = pd.DataFrame(columns=['Model','ROC_AUC score','Recall score_Class 1'])
+
+model = ['Logistic Regression CV', 'KNeighbors Classifier','SGD Classifier','Gradient Boosting Classifier',
+         'Support Vector Classifier', 'Random Forest Classifier']
+
+rocScore_ModSel = [round(roc_auc_score(y_test, y_prob_predict_LOGR1_GR[:,1]),4), 
+                   round(roc_auc_score(y_test, y_prob_predict_KNC1_GS[:,1]),4), 
+                   round(roc_auc_score(y_test, y_prob_predict_SGD1_GS[:,1]),4), 
+                   round(roc_auc_score(y_test, y_prob_predict_GBC1_GS[:,1]),4), 
+                   round(roc_auc_score(y_test, y_prob_predict_SVC1_GS[:,1]),4),
+                   round(roc_auc_score(y_test, y_prob_predict_RFC1_GS[:,1]),4)]
+
+recallScore_ModSel = [round(recall_score(y_test, y_predict_LOGR1_GS),4), round(recall_score(y_test, y_predict_KNC1_GS),4),
+                      round(recall_score(y_test, y_predict_SGD1_GS),4), round(recall_score(y_test, y_predict_GBC1_GS),4),
+                      round(recall_score(y_test, y_predict_SVC1_GS),4), round(recall_score(y_test, y_predict_RFC1_GS),4)]
+
+
+df_summary_model['Model'] = model
+df_summary_model['ROC_AUC score'] = rocScore_ModSel
+df_summary_model['Recall score_Class 1'] = recallScore_ModSel
+df_summary_model
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="600" height="380">
+
+With Grid Search on various models and various parameter trials, the best ROC_AUC score is in the range of 0.60-0.67. Random Forest Classifier was found having the highest ROC_AUC score at 0.66 with Recall score for Class 1 
+stood 2nd highest at 0.69
+
+### Summary of Predictive Model Best Estimator & Features Importance
+
+Based on earlier model evaluation on Random Forest Classifier, the best estimators & their parameters as below:
+
+[RandomForestClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+* bootstrap=True
+* class_weight=None 
+* criterion='gini'
+* max_depth=3
+* max_features='log2'
+* max_leaf_nodes=None
+* min_impurity_decrease=0.0
+* min_impurity_split=None
+* min_samples_leaf=1
+* min_samples_split=2
+* min_weight_fraction_leaf=0.0
+* n_estimators=53
+* n_jobs=1
+* oob_score=False
+* random_state=42
+* verbose=0
+* warm_start=False
+
+
+{% highlight js %}
+// Form new dataframe to list down the features and their importance values
+
+df_RFC_features = pd.DataFrame(dict_RFC_features.items(), columns=['Features','Feature_Importance'])
+df_RFC_features.sort_values(['Feature_Importance'], ascending=False, inplace=True)
+
+df_RFC_features[df_RFC_features['Feature_Importance']>0]
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Feature_importance.jpeg" width="600" height="1000">
+
+
+<a id="Validation"></a>
+
+## Validation of False Positive with Data @ 2018
+---
+
+Since precision and recall score for Class 1 in Confusion Matrix is not upto expectation, validation of the all False Positive to be done next to check if any of those predicted IPO/acquired companies did get listed/acquired after year 2015
+
+Companies latest status could be validated through web-scrapped script / directly reference on webpage
+
+
+{% highlight js %}
+df_validation['corrected_FalsePositive'] = np.where(df_validation['Validation_2018_rev']=='-',1,0)
+df_validation['Validation_2018_rev'].value_counts()
+
+'''
+-           146
+Acquired     22
+IPO          10
+Closed        5
+Name: Validation_2018_rev, dtype: int64
+'''
+{% endhighlight %}
+
+{% highlight js %}
+extra_percent_Acquired_IPO = round(32.0/(146+22+10+5)*100,2)
+extra_percent_Acquired_IPO
+
+'''
+17.49
+'''
+{% endhighlight %}
+
+{% highlight js %}
+risk_percent_ClosedDown = round(5.0/(146+22+10+5)*100,2)
+risk_percent_ClosedDown
+
+'''
+2.73
+'''
+{% endhighlight %}
+
+{% highlight js %}
+// check updated confusion matrix in dataframe to ensure it is correctly positioned before proceeding to plots
+
+conmat = np.array(confusion_matrix(df_tempVal2['adjusted_Is_Acquired_IPO'], df_tempVal2['y_predict_RFC'], labels=[0,1]))
+
+confusion = pd.DataFrame(conmat, index=['isNot_acquired_IPO', 'is_acquired_IPO'],
+                         columns=['predictedNot_acquired_IPO','predicted_acquired_IPO'])
+confusion
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/img/portfolio/Validation_outcome.jpeg" width="1000" height="800">
+
+17.49% of companies under false positive were actually acquired/IPO after 2015. Overall recall score for class 1 after factored in the latest company status now inceased from 0.69 to 0.79 ~~
+
+As original dataset cut off timeframe was back to 2015, giving longer holding period of 3-5 years on those predicted
+high potential/high growth companies, the chances of them getting acquired/listed was around 17% more, and overall would increase the True Positive Recall score to 0.79
+
+With only 5 key features :
+* funding_total
+* funding_rounds
+* no.of key investeros
+* founding year and 
+* market sectors 
+
+in addition to various scatterred data sets, the recall score for Class 1 at 0.79 (validated with data @ 2018) was therefore moderate enough to assist pre-judgement of a company long term potential
 
