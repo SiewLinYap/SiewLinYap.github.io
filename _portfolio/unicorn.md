@@ -55,7 +55,7 @@ To identify high growth company & predict its potential for successful IPO / acq
 ## Analytical Approach
 ---
 
-#### 1. Scope Definition to Focus Towards Market Sectors of High Interest
+#### 1. Scope Definition to Focus on Market Sectors of High Interest
 Since available data set was back to 2015, start up companies to focus for the analysis shall not be funded too many years back.
 
 * Criteria 1: Limit scope to companies with last round of funding obtained at 2010 and beyond
@@ -114,11 +114,11 @@ plt.show()
 
 
 {% highlight js %}
-// attempt to use TF-IDF vectorizer on company category to check which key words are higher importance/appearance
+// attempt to use TF-IDF vectorizer on company category to check which key words are of higher importance/appearance
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 tvec = TfidfVectorizer(stop_words='english', min_df=1, ngram_range=(1,2), max_features=1000)
-// use ngram(1,2) because category more relevant when mentioning in single (software), or pair words (consumer electronics) 
+// use ngram(1,2) because category is more relevant when mentioning in single (software), or pair words (consumer electronics) 
 
 tvec.fit(df_top10investor_choice['company_category_list_2'])
 df_catModified_tvec = pd.DataFrame(tvec.transform(df_top10investor_choice['company_category_list_2']).todense(), columns=['Category_'+ v for v in tvec.get_feature_names()], index=df_top10investor_choice['company_category_list_2'].index)
