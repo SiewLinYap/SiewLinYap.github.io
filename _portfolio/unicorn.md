@@ -621,7 +621,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="1200" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="2000" height="450">
 
 
 ### Summary of Sampling Method Evaluation
@@ -649,7 +649,7 @@ df_summary_SampMethod['Recall_score_Class1'] = recallScore_SampM
 df_summary_SampMethod
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="800" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="600" height="250">
 
 
 With base model of LogisticRegression CV, scoring for various sampling methods were compared. From the summary table,
@@ -757,7 +757,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="1200" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="2000" height="650">
 
 
 ### Summary of Predictive Model Selection
@@ -819,7 +819,7 @@ df_RFC_features.sort_values(['Feature_Importance'], ascending=False, inplace=Tru
 df_RFC_features[df_RFC_features['Feature_Importance']>0]
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Feature_importance.jpeg" width="600" height="1000">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Feature_importance.jpeg" width="600" height="800">
 
 
 <a id="Validation"></a>
@@ -873,7 +873,7 @@ confusion = pd.DataFrame(conmat, index=['isNot_acquired_IPO', 'is_acquired_IPO']
 confusion
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Validation_outcome.jpeg" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Validation_outcome.jpeg" width="2000" height="500">
 
 17.49% of companies under false positive were actually acquired/IPO after 2015. Overall recall score for class 1 after factored in the latest company status now inceased from 0.69 to 0.79 ~~
 
