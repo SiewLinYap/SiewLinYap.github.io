@@ -886,15 +886,14 @@ confusion
 
 Based on the dataset of 2015, the performance of companies under Top10 Investor List as follows :
 
-* 196 / 1674 companies from top 10 investors list were acquired 
-  [ 11.70% acquisition successful rate ]
+196 / 1674 companies from top 10 investors list were acquired 
+[ 11.70% acquisition successful rate ]
 
+71 / 1674 companies were successfully listed
+[ 4.24% successful IPO rate ]
 
-* 71 / 1674 companies were successfully listed
-  [ 4.24% successful IPO rate ]
-
-* 52 / 1674 companies were closed down
-  [ 3.11% failure rate ]
+52 / 1674 companies were closed down
+[ 3.11% failure rate ]
    
 Due to imbalance dataset, sampling method was therefore applied. Based on highest ROC_AUC score and Recall Score for True Positiove, the final selected classification predictive model was Random Forest Classifier coupled with Randam Under Sampler Method. The analysis and prediction done based on 2015 data set would yield a Recall score of only 0.69 for True Positive and AUC score of 0.66. Regardless of various hyperparameters tuning and evaluation of different predictive models, the target metrics were still ranging between 0.6 to < 0.7, hitting the limitation of the evaluated features to yield better prediction score. 
 
