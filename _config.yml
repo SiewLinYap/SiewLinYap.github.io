@@ -21,8 +21,8 @@ theme_settings:
    DSI3 @ GA 2018 : Never Stop Learning as Life Never Stops Teaching
 
   # Icons
-  rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: # Full email address, e.g. "sam@example.com"
+  rss:  # Make sure you created a feed.xml with feed.xml layout
+  email_address: "siewlin2009@gmail.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
