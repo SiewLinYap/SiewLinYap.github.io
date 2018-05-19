@@ -262,7 +262,7 @@ plt.title('No. of Company Exited due to Acquisition')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="1000" height="450">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Acquired_by_mktSec_graph.jpeg" width="1000" height="400">
 
 {% highlight js %}
 df_acquired_sortby_MS = startup_2010onwards.groupby('Market_Sector')['name'].count().to_frame()
@@ -321,7 +321,7 @@ plt.title('No. of IPO Companies by Market Sector')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="1000" height="450">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Ipo_by_mktSec_graph.jpeg" width="1000" height="400">
 
 {% highlight js %}
 df_ipo_sortby_MS = df_ipo.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -391,7 +391,7 @@ plt.show()
 
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="1000" height="450">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Closed_by_mktSec_graph.jpeg" width="1000" height="350">
 
 {% highlight js %}
 df_closed_sortby_MS = df_closed.groupby('Market_Sector')['Company Name'].count().to_frame()
@@ -621,7 +621,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="2200" height="700">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_example.jpeg" width="2200" height="600">
 
 
 ### Summary of Sampling Method Evaluation
@@ -649,7 +649,7 @@ df_summary_SampMethod['Recall_score_Class1'] = recallScore_SampM
 df_summary_SampMethod
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="800" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Sampling_method_summary.jpeg" width="600" height="200">
 
 
 With base model of LogisticRegression CV, scoring for various sampling methods were compared. From the summary table,
@@ -757,7 +757,7 @@ plt.legend(loc="lower right")
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="2200" height="700">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_example.jpeg" width="2200" height="600">
 
 
 ### Summary of Predictive Model Selection
@@ -781,7 +781,7 @@ df_summary_model['Recall score_Class 1'] = recallScore_ModSel
 df_summary_model
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="800" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Modelling_selection_summary.jpeg" width="600" height="200">
 
 With Grid Search on various models and various parameter trials, the best ROC_AUC score is in the range of 0.60-0.67. Random Forest Classifier was found having the highest ROC_AUC score at 0.66 with Recall score for Class 1 
 stood 2nd highest at 0.69
