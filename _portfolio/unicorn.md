@@ -370,9 +370,9 @@ Average | Median
 #### Top 3 IPO companies having the highest funding total:
 Company | Total Funding
 ------- | ------
-* 1st Alibaba   | \$4.81 Billion
-* 2nd Facebook  | \$2.43 Billion
-* 3rd Twitter   | \$1.16 Billion
+1st Alibaba   | \$4.81 Billion
+2nd Facebook  | \$2.43 Billion
+3rd Twitter   | \$1.16 Billion
 
 ## Analysis on Closed Down Companies
 Similar stats analysis approach was again repeated and used to study Closed Down companies. Below are the graphical analytic outcomes for Closed Down companies :
