@@ -351,7 +351,7 @@ plt.show()
 * 4.24% successful IPO rate
 
 #### From 71 IPO companies :
-------------------------
+
 Average | Median
 ------- | ------
 \$332.91M total funding              | $112.79M
@@ -359,19 +359,20 @@ Average | Median
 1.94 investor from Top10 investors   | 1
 2005 years to exit                   | 2006
 
-
+---
 #### Top 3 Market Sectors having the highest no. of IPO companies:
---------------------------------------------------------------
-- BioTech|Health Care    : 25
-- Software|Apps          : 9
-- eCommerce|Marketplace  : 7
 
+- BioTech\\Health Care    : 25
+- Software\\Apps          : 9
+- eCommerce\\Marketplace  : 7
 
+---
 #### Top 3 IPO companies having the highest funding total:
------------------------------------------------------
-* 1st Alibaba   : funding total at \$4.81 Billion
-* 2nd Facebook  : funding total at \$2.43 Billion
-* 3rd Twitter   : funding total at $1.16 Billion
+Company | Total Funding
+------- | ------
+* 1st Alibaba   | \$4.81 Billion
+* 2nd Facebook  | \$2.43 Billion
+* 3rd Twitter   | \$1.16 Billion
 
 ## Analysis on Closed Down Companies
 Similar stats analysis approach was again repeated and used to study Closed Down companies. Below are the graphical analytic outcomes for Closed Down companies :
@@ -405,9 +406,9 @@ df_closed_sortby_MS
 * 52 / 1674 companies were closed down
 * 3.11% failure rate
    
---------------------------------------------------------------------------------------------------
+---
 #### From 52 closed down companies :
--------------------------------
+
 Average | Median
 ------- | ------
 \$28.66M total funding              | $12.15M
@@ -417,13 +418,13 @@ Average | Median
 
 [ 2008 Subprime Mortgage Financial Crisis ]
 
-
+---
 #### Top 3 Market Sectors having the highest no. of Closed Down companies:
----------------------------------------------------------------------
-- eCommerce|Marketplace                               : 10
-- Content Creation|Entertainment|Curated Web|Design   : 7
-- BioTech|Health Care                                 : 6
-- Software|Apps                                       : 6
+
+- eCommerce\\Marketplace                               : 10
+- Content Creation\\Entertainment\Curated Web|Design   : 7
+- BioTech\\Health Care                                 : 6
+- Software\\Apps                                       : 6
 
 
 <a id="ModelSelection"></a>
