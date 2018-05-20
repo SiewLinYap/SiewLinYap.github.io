@@ -2,7 +2,6 @@
 layout: post
 title: It's not the end. It's just the beginning
 feature-img: "assets/img/pexels/rainbow.jpeg"
-thumbnail: "assets/img/thumbnails/data_love_candy.jpeg"
 
 ---
 
