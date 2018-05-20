@@ -3,7 +3,7 @@ layout: post
 title: It's not the end. It's just the beginning
 feature-img: "assets/img/pexels/rainbow.jpeg"
 thumbnail: "assets/img/thumbnails/data_love_candy.jpeg"
-tags: [Test, Lorem]
+
 ---
 
   Approaching the graduation of a data science immersive course, I've been forwarded and reading a few articles lately concerning the topics about the fear of data science and its analytical works to be taken over by powerful AI platforms. There were also a few articles circulating around describing data scientist could be potentially very soon no longer the demanding one in the job market. While it's probably good to stay alert and be aware of how the working eco-system has now changed, we probably shouldn't be too concerned that what we've learned through the entire course will be of somewhat wasted due to the fact that it can now easily be done through intelligent, user-friendly, automated powerful software. 
