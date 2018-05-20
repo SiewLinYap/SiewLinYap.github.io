@@ -8,10 +8,10 @@ date: May, 18 2018
 
 ![image]({{ site.baseurl }}/{{ page.img }})
 
+In the domain of analysing company growth and its potential, the conventional way is normally conducted by checking the comprehensive financial reports and operation status. However, to many who do not really hold lots of business insights and sufficient financial figures, is there a simpler but yet statistically studied method that they can use as a baseline reference ?
+
 ## Prediction of Company Growth Potential
 ---
-
-In the domain of analysing company growth and its potential, the conventional way is normally conducted by checking the comprehensive financial reports and operation status. However, to many who do not really hold lots of business insights and sufficient financial figures, is there a simpler but yet statistically studied method that they can use as a baseline reference ?
 
 The objective of the project is to attempt using limited information and small set of features to predict the company potential if the company will eventually go for IPO or acquired by other market players. It is not meant to serve as any financial or investment advice but more a project to exercise and integrate various modelling trials to assist the preliminary assessment decision in a more structure and statistically explainable approach.
 
