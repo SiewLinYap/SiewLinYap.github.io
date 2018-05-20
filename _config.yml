@@ -15,7 +15,7 @@ theme_settings:
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p>A Journey to Data Science @ Singapore</p>
+     <p>Stories are just data with a soul</p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
    DSI3 @ GA 2018 : Never Stop Learning as Life Never Stops Teaching
