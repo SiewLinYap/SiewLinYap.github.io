@@ -910,7 +910,3 @@ With only 5 key features :
 
 in addition to various scatterred data sets, the performance of the model was therefore at moderate level to serve as preliminary baseline to assess a company mid-long term growth potential.
 
-
-[iframe src=“https://public.tableau.com/views/TB_Dashboard/Dashboard1?:embed=y&:display_count=yes&publish=yes:showVizHome=no&:embed=true” width="90%" height="500”]
-
-
