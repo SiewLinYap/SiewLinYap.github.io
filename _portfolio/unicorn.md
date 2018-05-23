@@ -912,6 +912,6 @@ With only 5 key features :
 in addition to various scatterred data sets, the performance of the model was therefore at moderate level to serve as preliminary baseline to assess a company mid-long term growth potential.
 
 
-<iframe src=“https://siewlinyap.github.io/includes/visualization_investment_porfolio/” width="90%" height="600”></iframe>
+<iframe src=“https://siewlinyap.github.io/unicorn/visualization_investment_porfolio/” width="90%" height="600”></iframe>
 
 
