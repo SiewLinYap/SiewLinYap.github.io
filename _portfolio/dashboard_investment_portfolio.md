@@ -7,4 +7,4 @@ date: May, 18 2018
 ---
 
 
-<iframe src="https://public.tableau.com/views/TB_Dashboard/Dashboard1?:showVizHome=no&:embed=true" width="100%" height="1600"></iframe>
+<iframe src="https://public.tableau.com/views/TB_Dashboard/Dashboard1?:showVizHome=no&:embed=true" width="100%" height="1000"></iframe>
