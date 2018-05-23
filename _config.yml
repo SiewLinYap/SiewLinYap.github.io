@@ -2,7 +2,7 @@
 baseurl: "/"
 url: "https://siewlinyap.github.io"
 title: SiewLin_Yap  # site's title
-description: "Stories are just data with a soul" # used by search engines
+description: "Stories are just data with souls" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
@@ -15,7 +15,7 @@ theme_settings:
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p> ~~~ Stories are just data with a soul ~~~ </p>
+     <p> ------ Stories are just data with a soul ------ </p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
    DSI3 @ GA 2018 : Never Stop Learning as Life Never Stops Teaching
