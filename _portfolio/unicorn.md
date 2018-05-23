@@ -439,7 +439,7 @@ Average | Median
 
 ## Sampling Methods & Predictive Model Selection
 
-Current data set was found not suitable for a comprehensive Time Series Analysis due to the lack of important key figure of Date/Time and its completeness to support continuous time-dependent analysis. With this, pior to starting next core modelling, a new dataframe was set up to exclude companies with Closed Down status and companies that were either acquired or IPO were then combined as one category. The restructure of such dataframe was done in preparation for classification modelling purpose. 
+Current data set was found not suitable for a comprehensive Time Series Analysis due to the lack of important key feature of Date/Time and its completeness to support continuous time-dependent analysis. With this, pior to starting next core modelling, a new dataframe was set up to exclude companies with Closed Down status and companies that were either acquired or IPO were then combined as one category. The restructure of such dataframe was done in preparation for classification modelling purpose. 
 
 * Restructure 1: Exclude companies with Closed Down status
 * Restructure 2: Combine acquired companies and IPO companies as one new category
