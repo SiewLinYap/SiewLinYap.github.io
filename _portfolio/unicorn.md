@@ -1,6 +1,5 @@
 ---
 layout: post
-permalink: unicorn/
 title: Where's the UNICORN ?
 img: "assets/img/portfolio/unicorn.png"
 date: May, 18 2018
@@ -910,8 +909,4 @@ With only 5 key features :
 * market sectors 
 
 in addition to various scatterred data sets, the performance of the model was therefore at moderate level to serve as preliminary baseline to assess a company mid-long term growth potential.
-
-
-<iframe src=“https://siewlinyap.github.io/unicorn/visualization_investment_porfolio/” width="90%" height="600”></iframe>
-
 
