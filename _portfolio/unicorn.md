@@ -673,7 +673,7 @@ Classification models to evaluate as listed below :
 3. SGD Classifier
 4. Gradient Boosting Classifier
 5. Support Vector Classifier
-6. Random Forest Classifier'
+6. Random Forest Classifier
 
 
 {% highlight js %}
