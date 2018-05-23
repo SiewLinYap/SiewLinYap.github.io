@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink:/portfolio/dashboard_investment_portfolio/
+permalink: /dashboard_investment_portfolio/
 title: Dashboard - Investment Portfolio
 feature-img: "assets/img/portfolio/cake.png"
 img: "assets/img/portfolio/cake.png"
