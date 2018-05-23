@@ -1,0 +1,5 @@
+Bayesian => will give distribution not fix value
+frequential => with fix value of a, b ( coefficent, intercept)
+
+
+regularization => useful for classification and regression, not for clustering/PCA
