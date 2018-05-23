@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: unicorn/
+permalink: /unicorn/
 title: Where's the UNICORN ?
 img: "assets/img/portfolio/unicorn.png"
 date: May, 18 2018
