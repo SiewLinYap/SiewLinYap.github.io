@@ -298,33 +298,33 @@ sns.distplot(df_MCF_final['mean_Salary_Monthly'], bins=30)
 Example as below :
 
 {% highlight js %}
-# TF-IDF on JobTitle
+// TF-IDF on JobTitle
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 tvec = TfidfVectorizer(stop_words=stop_words, min_df=1, ngram_range=(2,2), max_features=1000)
-# use ngram(2,2) because JobTitle more relevant when mentioning in pairs (business analyst) 
-# rather than just analyst for ngram(1,1)
+// use ngram(2,2) because JobTitle more relevant when mentioning in pairs (business analyst) 
+// rather than just analyst for ngram(1,1)
 
 tvec.fit(df_MCF_final['JobTitle'])
 df_JobTitle_tvec = pd.DataFrame(tvec.transform(df_MCF_final['JobTitle']).todense(), columns=['Title_'+ v for v in tvec.get_feature_names()], index=df_MCF_final['JobTitle'].index)
-# to add prefix of Title in column name, so it is clearer that these features are originally from JobTitle column
-# when putting the post TF-IDF processed data into new dataframe later on combining with other post TF_IDF data
-# to include index=df_MCF_final['JobTitle].index in order to have the index consistent and avoid mismatch of index
-# when using pd.concat with other df later on
+// to add prefix of Title in column name, so it is clearer that these features are originally from JobTitle column
+// when putting the post TF-IDF processed data into new dataframe later on combining with other post TF_IDF data
+// to include index=df_MCF_final['JobTitle].index in order to have the index consistent and avoid mismatch of index
+// when using pd.concat with other df later on
 
 df_JobTitle_tvec.sum().sort_values(ascending=False)
-# to use TF-IDF for subsequent modeling 
+// to use TF-IDF for subsequent modeling 
 {% endhighlight %}
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Tfidf_job_title.png" width="1000" height="600">
 
 {% highlight js %}
-# Encoder on Employment Type:
+// Encoder on Employment Type:
 
 df_EmpType = pd.get_dummies(df_MCF_final['EmploymentType'], drop_first=True, prefix= 'EmpType')
 df_EmpType.head()
-# first column = Contract
+// first column = Contract
 {% endhighlight %}
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="1000" height="600">
@@ -368,13 +368,11 @@ Name: salary_class, dtype: int64
 Imbalance data set was observed. Therefore, need to consider sampling method for minority class before modeling
 
 {% highlight js %}
-# train-test split for classifictaion modeling:
-
+// train-test split for classifictaion modeling:
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y_class, test_size=0.3, random_state=42)
 
-# Random over sample minority class
-
+// Random over sample minority class
 from imblearn.over_sampling import RandomOverSampler
 ros = RandomOverSampler(ratio='minority', random_state=42)
 X_res_train, y_res_train = ros.fit_sample(X_train, y_train)
@@ -442,7 +440,7 @@ salary_coeff = model_LOGR.coefs_paths_
 
 
 {% highlight js %}
-# coefficient for each salary class determined by the index coordintes as below :
+// coefficient for each salary class determined by the index coordintes as below :
 
 salary_coeff[1][0][0] # coefficient path for salary class 1
 salary_coeff[2][0][0] # coefficient path for salary class 2
@@ -458,15 +456,15 @@ coeff_range_class1 = salary_coeff[1][0][0]
 coeff_class1_column = list(X_train.columns)
 
 coeff_class1_dict = dict(zip(coeff_class1_column, coeff_range_class1[:-1])) 
-# to remove the last column coefficient(=mean salary monthly)
+// to remove the last column coefficient(=mean salary monthly)
 
 
-# form dataframe for features and their coefficients:
+// form dataframe for features and their coefficients:
 df_coeff_class1_raw = pd.DataFrame.from_records([coeff_class1_dict])
 df_coeff_class1_LOGRCV = df_coeff_class1_raw.transpose().reset_index()
 df_coeff_class1_LOGRCV.rename(columns={'index':'Feature',0:'Coefficient'},inplace=True)
 
-# top 10 features affecting salary class 1:
+// top 10 features affecting salary class 1:
 df_coeff_class1_LOGRCV.sort_values('Coefficient', ascending=False).head(10)
 {% endhighlight %}
 
@@ -483,9 +481,7 @@ for v in df_MCF_final['JobTitle']:
     if 'data scien' in v.lower():
         data_job_list.append(1)
     elif 'data analy' in v.lower():
-        data_job_list.append(1)
-#     elif 'business analy' in v.lower():
-#         data_job_list.append(1)    
+        data_job_list.append(1) 
     else:
         data_job_list.append(0)
 
@@ -499,11 +495,11 @@ df_MCF_final['Data_JobList'] = data_job_list
 Example as below :
 
 {% highlight js %}
-# TF-IDF on RoleResponsibility
+// TF-IDF on RoleResponsibility
 
 tvec = TfidfVectorizer(stop_words=stop_words, min_df=1, ngram_range=(1,3), max_features=1000)
-# use ngram(2,3) because RoleResponbility more relevant when mentioning in longer word pairs 
-# like data analysis, years professional experience
+// use ngram(2,3) because RoleResponbility more relevant when mentioning in longer word pairs 
+// like data analysis, years professional experience
 
 tvec.fit(df_MCF_final['RoleResponsibility'])
 df_RoleResp_tvec2 = pd.DataFrame(tvec.transform(df_MCF_final['RoleResponsibility']).todense(), columns=['RoleResp_'+ v for v in tvec.get_feature_names()], index=df_MCF_final['RoleResponsibility'].index)
@@ -517,17 +513,17 @@ df_RoleResp_tvec2.sum().sort_values(ascending=False)
 ### 2c. Predictive Classification Model Selection
 
 {% highlight js %}
-# Set up X matrix for modeling:
+// Set up X matrix for modeling:
 
 X2_raw = pd.concat([df_Requirements_tvec2, df_RoleResp_tvec2], axis=1)
 
-# Set up y matrix for modeling:
+// Set up y matrix for modeling:
 
 y2_raw = df_MCF_final['Data_JobList']
 {% endhighlight %}
 
 {% highlight js %}
-# calculate baseline accuracy
+// calculate baseline accuracy
 
 baseline = y2_raw.value_counts().max()/float(len(y2_raw))
 print('Baseline : {:0.4}'.format(baseline))
@@ -541,33 +537,29 @@ Baseline : 0.8824
 {% highlight js %}
 X2_train, X2_test, y2_train, y2_test = train_test_split(X2_raw, y2_raw, test_size=0.3, random_state=42)
 
-# Random over sample minority class
-
+// Random over sample minority class
 from imblearn.over_sampling import RandomOverSampler
 ros = RandomOverSampler(ratio='minority', random_state=42)
 X2_res_train, y2_res_train = ros.fit_sample(X2_train, y2_train)
 
-# 1st model trial : LogisticRegressionCV
-
+// 1st model trial : LogisticRegressionCV
 model_LOGRCV2 = LogisticRegressionCV(cv=5)
 model_LOGRCV2.fit(X2_res_train, y2_res_train)
 y2_predictions = model_LOGRCV2.predict(X2_test)
 
-# 2nd model trial : RidgeClassifierCV
-
+// 2nd model trial : RidgeClassifierCV
 model_RClass = RidgeClassifierCV()
 model_RClass.fit(X2_res_train, y2_res_train)
 y_pred = model_RClass.predict(X2_test)
 
-# 3rd model trial : KNN
-
+// 3rd model trial : KNN
 model_knn = KNeighborsClassifier()
 model_knn_params = {'n_neighbors': range(1, 20, 2), 
              'weights': ['uniform', 'distance']}
 knn_Gsearch = GridSearchCV(model_knn, model_knn_params, n_jobs=3, cv=5, verbose=1)
 knn_Gsearch.fit(ss.fit_transform(X2_raw), y2_raw)
 
-# 4th model trial : decision tree classifier
+// 4th model trial : decision tree classifier
 model_dtreec = DecisionTreeClassifier(random_state=42)
 model_dtreec.fit(ss.fit_transform(X2_raw), y2_raw)
 model_dtreec.predict(X2_test)
@@ -575,7 +567,7 @@ model_dtreec.predict(X2_test)
 
 
 {% highlight js %}
-# Summary of all model trials:
+// Summary of all model trials:
 
 print('1. Score_LogisticRegressionCV \t= {}'.format(model_LOGRCV2.score(X2_test, y2_test)))
 print('2. Score_RidgeClassifierCV \t= {}'.format(model_RClass.score(X2_test, y2_test)))
@@ -599,9 +591,9 @@ coeff_column = list(X2_train.columns)
 coeffients_LOGRCV2 = [v for v in  model_LOGRCV2.coefs_paths_[1][0][0]]
 
 coeff_dict = dict(zip(coeff_column, coeffients_LOGRCV2[:-1])) 
-# to remove the last column coefficient(=mean salary monthly)
+// to remove the last column coefficient(=mean salary monthly)
 
-# form dataframe for features and their coefficients:
+// form dataframe for features and their coefficients:
 
 df_coeff_raw = pd.DataFrame.from_records([coeff_dict])
 df_coeff_LOGRCV = df_coeff_raw.transpose().reset_index()
