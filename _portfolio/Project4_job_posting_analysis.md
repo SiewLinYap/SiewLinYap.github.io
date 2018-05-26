@@ -327,7 +327,7 @@ df_EmpType.head()
 // first column = Contract
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="700" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="800" height="200">
 
 
 ### 1c. Predictive Classification Model Selection
@@ -469,7 +469,7 @@ df_coeff_class1_LOGRCV.sort_values('Coefficient', ascending=False).head(10)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="400" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="500" height="300">
 
 ## Part 2 : Factors Impacting Job Category Prediction
 ### 2a. Scope Definition to Segregate Target Job Category vs Others
@@ -602,7 +602,7 @@ df_coeff_LOGRCV.sort_values('Coefficient', ascending=False).head(20)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="400" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="500" height="600">
 
 
 ## Summary
