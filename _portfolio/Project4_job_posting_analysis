@@ -1,0 +1,163 @@
+---
+layout: post
+title: Analysis on Job Postings
+img: "assets/img/portfolio/Job_posting_content.png"
+date: May, 26 2018
+
+---
+
+![image]({{ site.baseurl }}/{{ page.img }})
+
+Every year, there are thousands of graduates from different institutions coming fresh into the job market, looking for 
+the jobs that best fit them in terms of qualification, aspiration and salary expectation. There are also people changing 
+their career paths, looking for the ones that they can leverage their previous experience and knowledge into better use.
+Similarly, employers are also hunting for the right candidates to fill the positions hoping to get them on board to help
+growing the business together with an aligned visions. In view of these bi-directional demands and needs, how to have the consolidated solutions in order to stay competitive for both parties to get the right fit for each other become an interesting topic to study.
+
+This project outlined the focus by studying two main aspects:
+### __Part 1 : Factors that impact salary__
+
+   * which are significant decisive factors for both job seeker and employer during the consideration of an acceptance / offer
+
+
+### __Part 2 : Factors that distinguish the job category__
+
+   - which are essential for getting the right candidates with the most fit qualification and experiences
+, matching appropriately to the job requirements or roles and responsibilities
+
+
+
+<a id="data_source"></a>
+
+## Data Source
+---
+
+Job Postings @ [MyCareersFuture](https://www.mycareersfuture.sg)
+
+
+
+<a id="analytical_approach"></a>
+
+## Analytical Approach
+---
+
+### 1. Data Collection via Web-Scrapping
+* Collect job postings that are data-related and scrap at least 1000 data to get the relevant information that is needed for subsequent analysis and prediction
+
+
+### 2. Data Wrangling & Preparation
+* Parse web-scrapped data and prepare them into dataframe for easy processing
+* Perform data cleaning to clear doubtful entries and tranform into standardized types
+
+
+### 3. Exploratory Data Analysis
+* Set mean salary as the key predictive feature
+* Check salary distribution and remove outliers >15k for senior positions like HOD, director in order to have normally distributed data for better prediction outcomes as general norms
+
+### 4. Pre-Processing & Predictive Model Selection
+* Analysing and transforming textual information using Natural Language Processing packages
+* Evaluation of various classification models for best predictive model selection
+
+### 5. Outlining Features Importance
+* Summarizing the overall features that hold greatest significance in terms of Salary Prediction and Job Category Classification
+
+
+<a id="analytical_approach"></a>
+
+## Analytical Outcomes :
+---
+
+##  Web-Scrapping
+Using BeautifulSoup and Selenium, relevant job postings linked were collected
+
+Part 1 : to get basic job data info
+
+{% highlight js %}
+driver = webdriver.Firefox(executable_path='./geckodriver')
+
+compiled_data = []
+for page in range(0,20): 
+   
+    url = "https://www.mycareersfuture.sg/search?search=data&page={}".format(page)
+    
+    # Visit relevant page.b
+    driver.get(url)
+
+    # Wait few second.
+    sleep(3)
+
+    # Grab the page source.
+    html = driver.page_source
+    # print(html)
+
+    soup = BeautifulSoup(html, 'lxml')
+    
+    compiled_data.append(list(jobPostingInfo(soup)))
+
+
+driver.close()
+{% endhighlight %}
+
+
+Part 2 : to get job desc + role & responsibility info
+
+{% highlight js %}
+driver = webdriver.Firefox(executable_path='./geckodriver')
+
+addOn_data = []
+
+for i in range(0, len(compiled_data)):
+    page_temp = []
+    
+    for j in range(20): # one page only has 20 records
+        
+        temp = []
+        joblink = compiled_data[i][8][j]
+        temp.append(joblink)
+        
+        joblink_url = "https://www.mycareersfuture.sg"+joblink
+        
+        
+        # Visit relevant page.
+        driver.get(joblink_url)
+
+        # Wait few second.
+        sleep(3)
+
+        # Grab the page source.
+        html = driver.page_source
+        # print(html)
+
+        soup2 = BeautifulSoup(html, 'lxml')
+        
+        postDate = soup2.find('span',{'id':'last_posted_date'}).text
+        temp.append(postDate)
+        
+        closeDate = soup2.find('span',{'id':'expiry_date'}).text
+        temp.append(closeDate)
+
+        job_content = soup2.find_all('div',{'id':'content'})
+        role_resp = job_content[0].text
+        temp.append(role_resp)
+        
+        try:
+            requirements = job_content[1].text
+            temp.append(requirements)
+        except:
+            temp.append('-')
+        
+        
+        page_temp.append(temp)
+    
+    addOn_data.append(page_temp)
+
+driver.close()
+{% endhighlight %}
+
+<iframe src="https://siewlinyap.github.io/Project4_job_posting_analysis/web_scrapped_df/" height="400" width="600" overflow="auto"></iframe>
+
+
+{% highlight js %}
+
+{% endhighlight %}
+<img src="{{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg" width="600" height="420">
