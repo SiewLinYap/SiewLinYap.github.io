@@ -288,4 +288,4 @@ Example of the consolidated dataframe storing partial web-scrapped data
 {% highlight js %}
 
 {% endhighlight %}
-<img src="{{ site.baseurl }}/assets/img/portfolio/Vectorizer_counts.jpeg" width="600" height="420">
+
