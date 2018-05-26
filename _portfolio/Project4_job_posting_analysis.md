@@ -327,7 +327,7 @@ df_EmpType.head()
 // first column = Contract
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="600" height="100">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="700" height="200">
 
 
 ### 1c. Predictive Classification Model Selection
@@ -469,7 +469,7 @@ df_coeff_class1_LOGRCV.sort_values('Coefficient', ascending=False).head(10)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="500" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="400" height="200">
 
 ## Part 2 : Factors Impacting Job Category Prediction
 ### 2a. Scope Definition to Segregate Target Job Category vs Others
@@ -575,7 +575,7 @@ print('3. Score_KNN \t\t\t= {}'.format(knn_best.score(X2_test, y2_test)))
 print('4. Score_DecisionTreeClassifier = {}'.format(model_dtreec.score(X2_test, y2_test)))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Cross_valdtn_score_job_cat.png" width="600" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Cross_valdtn_score_job_cat.png" width="500" height="100">
 
 Since Logistic Regression CV yielded the highest score, it was used to examine what components in the job posting that leaded to the differentiation of the job category (Data Scientist/Data Analyst) vs others
 
@@ -602,7 +602,7 @@ df_coeff_LOGRCV.sort_values('Coefficient', ascending=False).head(20)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="500" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="400" height="500">
 
 
 ## Summary
