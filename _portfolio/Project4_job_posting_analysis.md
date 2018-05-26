@@ -288,7 +288,7 @@ After thorough data cleaning, preparation and transformation, the normalized mea
 sns.distplot(df_MCF_final['mean_Salary_Monthly'], bins=30)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Normalized_mean_salary_graph.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Normalized_mean_salary_graph.png" width="800" height="500">
 
 ### 1b. Textual Transformation using NLP
 
@@ -317,7 +317,7 @@ df_JobTitle_tvec.sum().sort_values(ascending=False)
 // to use TF-IDF for subsequent modeling 
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Tfidf_job_title.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Tfidf_job_title.png" width="600" height="400">
 
 {% highlight js %}
 // Encoder on Employment Type:
@@ -327,7 +327,7 @@ df_EmpType.head()
 // first column = Contract
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Employement_type_table.png" width="400" height="200">
 
 
 ### 1c. Predictive Classification Model Selection
@@ -469,7 +469,7 @@ df_coeff_class1_LOGRCV.sort_values('Coefficient', ascending=False).head(10)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="600" height="400">
 
 ## Part 2 : Factors Impacting Job Category Prediction
 ### 2a. Scope Definition to Segregate Target Job Category vs Others
@@ -507,7 +507,7 @@ df_RoleResp_tvec2 = pd.DataFrame(tvec.transform(df_MCF_final['RoleResponsibility
 df_RoleResp_tvec2.sum().sort_values(ascending=False)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Tfidf_role_responsibility.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Tfidf_role_responsibility.png" width="600" height="600">
 
 
 ### 2c. Predictive Classification Model Selection
@@ -575,7 +575,7 @@ print('3. Score_KNN \t\t\t= {}'.format(knn_best.score(X2_test, y2_test)))
 print('4. Score_DecisionTreeClassifier = {}'.format(model_dtreec.score(X2_test, y2_test)))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Cross_valdtn_score_job_cat.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Cross_valdtn_score_job_cat.png" width="400" height="400">
 
 Since Logistic Regression CV yielded the highest score, it was used to examine what components in the job posting that leaded to the differentiation of the job category (Data Scientist/Data Analyst) vs others
 
@@ -602,7 +602,7 @@ df_coeff_LOGRCV.sort_values('Coefficient', ascending=False).head(20)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Features_coefficient_job_cat.png" width="600" height="500">
 
 
 ## Summary
@@ -614,7 +614,7 @@ Classification Approach :
 
 -------------------------------
 Model | Cross Validation Score
------ | ------
+----- | -----------------------
 Logistic Regression CV   | 0.5850
 RidgeClassifierCV        | 0.5782
 RandomForestClassifier   | 0.5646
@@ -627,16 +627,16 @@ Accuracy for salary range predicted using chosen model ( Log Regression CV ) as 
 
 ---------------------------
 Salary Class                | Accuracy
---------------------------- | ----------------------
-<= \$3000        - class 1  | 0.80
+--------------------------- | ---------
+\<= \$3000        - class 1 | 0.80
 \$3000 - \$6000  - class 2  | 0.62
 \$6000 - \$10000 - class 3  | 0.53
->$10000          - class 4  | 0.40
+\>$10000          - class 4 | 0.40
 
 
 Summary of the Top 10 features for various Salary Classes as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_coeff_sal_classes.png" width="1000" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_coeff_sal_classes.png" width="800" height="600">
 
 ## Part 2: Job Category Prediction
 
@@ -646,9 +646,9 @@ Summary of the Top 10 features for various Salary Classes as below :
 -------------------------------
 Model                   | Cross Validation Score
 ----------------------- | -----------------------
-LogisticRegressionCV 	| 0.9388
+LogisticRegressionCV 	  | 0.9388
 RidgeClassifierCV 	    | 0.9354
-KNN 			        | 0.9014
+KNN 			              | 0.9014
 DecisionTreeClassifier  | 0.9014
 
 
