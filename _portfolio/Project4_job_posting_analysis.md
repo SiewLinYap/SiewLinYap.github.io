@@ -396,9 +396,9 @@ score_LogisticRegressionCV = 0.585034013605
 
 Different classification models were evaluated under the similar methods and their cross validation scores were examined as below :
     
--------------------------------
+
 Classification Model | Cross Validation Score
-------- | ------
+-------------------- | ----------------------
 Logistic RegressionCV     | 0.5850
 RidgeClassifierCV         | 0.5782
 RandomForestClassifier    | 0.5646
@@ -469,7 +469,7 @@ df_coeff_class1_LOGRCV.sort_values('Coefficient', ascending=False).head(10)
 {% endhighlight %}
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="500" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_sal_class1.png" width="500" height="400">
 
 ## Part 2 : Factors Impacting Job Category Prediction
 ### 2a. Scope Definition to Segregate Target Job Category vs Others
