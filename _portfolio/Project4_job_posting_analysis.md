@@ -612,7 +612,7 @@ df_coeff_LOGRCV.sort_values('Coefficient', ascending=False).head(20)
 
 Classification Approach :
 
--------------------------------
+
 Model | Cross Validation Score
 ----- | -----------------------
 Logistic Regression CV   | 0.5850
@@ -622,9 +622,8 @@ SupportVectorClassifier  | 0.5816
 
 Classification approaches still yield poor results indicating further re-examination of feature selection and deeper study of other models to assess next level of improvement could be tried. For continuity and completion of the exercise, Logistic Regression CV was chosen as final model predicting the salary since it yielded the highest score.
 
-
+---
 Accuracy for salary range predicted using chosen model ( Log Regression CV ) as below :
----------------------------
 
 
 Salary Class  | Accuracy
@@ -635,7 +634,7 @@ Salary Class  | Accuracy
 \>$10000          - class 4 | 0.40
 
 
-
+---
 Summary of the Top 10 features for various Salary Classes as below :
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/Top10_feature_coeff_sal_classes.png" width="600" height="600">
@@ -643,7 +642,7 @@ Summary of the Top 10 features for various Salary Classes as below :
 ## Part 2: Job Category Prediction
 
 #### Summary of All Model Trials:
----
+
 
 
 Model  | Cross Validation Score
