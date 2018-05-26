@@ -34,6 +34,7 @@ This project outlined the focus by studying two main aspects:
 
 Job Postings @ [MyCareersFuture](https://www.mycareersfuture.sg)
 
+<img src="{{ site.baseurl }}/assets/img/portfolio/My_careers_future.png" width="400" height="300">
 
 
 <a id="analytical_approach"></a>
