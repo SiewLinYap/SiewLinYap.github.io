@@ -1292,7 +1292,7 @@ renovateable_coef_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="500" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="450" height="320">
 
 {% highlight js %}
 // graphical view of coefficient different :
