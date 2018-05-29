@@ -21,7 +21,7 @@ The effects in dollars of the renovate-able features were evaluated. By using th
 <a id="part_1"></a>
 
 ## Part 1 : 
-## Estimating the value of homes from fixed characteristics
+## Estimating the Value of Houses from Fixed Characteristics
 ---
 
 ### 1.1 Data Preparation & Cleaning
@@ -39,7 +39,7 @@ sns.heatmap(residential.isnull(), cmap='viridis', cbar=False, yticklabels=False)
 
 Percentage of missing values for affected columns was calculated and tabulated as below:
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="800" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="800" height="500">
 
 Columns with >45% missing values would be dropped in view of any replacement values would be assumption that impacted the accuracy significantly
 
@@ -61,7 +61,7 @@ fig = plt.figure(figsize=(20,10))
 sns.heatmap(residential.isnull(),cbar=False, yticklabels=False, cmap='viridis')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_cleaned.png" width="1200" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_cleaned.png" width="1600" height="600">
 
 Result showed no more missing value. Data set was clean for further analysis.
 
@@ -871,7 +871,7 @@ plt.title('Prediction of SalePrice with Fix features only')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Prediction_sales_actual_fixed.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Prediction_sales_actual_fixed.png" width="750" height="500">
 
 {% highlight js %}
 sns.residplot(x='Actual SalePrice', y='Predicted SalePrice', data=residual_fix_data)
@@ -889,7 +889,7 @@ plt.show()
 
 Partial view of the coeefficient graph
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="700">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="650">
 
 {% highlight js %}
 no_of_variables_in_modeling2 = len(coefficient_fix_df[coefficient_fix_df.values != 0])
@@ -910,7 +910,7 @@ print('MSE\t = {}'.format(MSE_2))
 print('RMSE\t = {}'.format(RMSE_2))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/MSE_fixed.png" width="400" height="100">
+<img src="{{ site.baseurl }}/assets/img/portfolio/MSE_fixed.png" width="400" height="80">
 
 <a id="part2"></a>
 
@@ -1032,7 +1032,7 @@ fig = plt.figure(figsize=(20,10))
 sns.barplot(x=cost_effect_comparison.index, y=cost_effect_comparison['% of Increase due to Renovation'])
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Effect_saleprice_renovatable_features.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Effect_saleprice_renovatable_features.png" width="1600" height="700">
 
 {% highlight js %}
 // distribution of the effect of renovate-able features on SalePrice:
@@ -1243,7 +1243,7 @@ coefficient_mix_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="500" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="480" height="250">
 
 {% highlight js %}
 // graphical view of coefficient different :
@@ -1292,7 +1292,7 @@ renovateable_coef_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="800" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="600" height="200">
 
 {% highlight js %}
 // graphical view of coefficient different :
@@ -1304,7 +1304,7 @@ coefficient_plot_renovateable_postive.sort_values('Coefficient', ascending=True)
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_plot_price_remaining.png" width="1600" height="700">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_plot_price_remaining.png" width="1600" height="680">
 
 Graph above showed the top 3 estimators of renovatable features were :
 1. OverallQual: Rates the overall material and finish of the house
@@ -1333,7 +1333,7 @@ sns.distplot(reno_feature_positive_increase_SP['OverallQual'], ax=ax0)
 sns.distplot(reno_feature_positive_increase_SP['OverallCond'], ax=ax1)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Overall_quality_condition_variance_price.png" width="1600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Overall_quality_condition_variance_price.png" width="1600" height="380">
 
 As data at this point already filtered down to only those with positive increase in SP due to renovation,
 The plot above showed that :
@@ -1360,7 +1360,7 @@ count_plot_df.sort_values(['Total_unit_positive_reno_effect'], ascending=False)
 
 Partial view of the tabulated sub-dataframe as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Count_plot_dataframe_table.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Count_plot_dataframe_table.png" width="600" height="300">
 
 {% highlight js %}
 effective_reno_features_positive_predictedSP = count_plot_df[count_plot_df['Total_unit_positive_reno_effect']!=0]
@@ -1404,7 +1404,7 @@ print('Absolute value of renovation effect [Mean_Cost_of_reno_effect]')
 print(Mean_Cost_of_reno_effect)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="180">
 
 On average, the renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
@@ -1414,7 +1414,7 @@ print('Score_achived \t\t\t: {}'.format(score_fix))
 print('No_of_variables_involved \t: {}'.format(no_of_variables_in_modeling2))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="150">
 
 Based on the score, it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
 
@@ -1431,7 +1431,7 @@ Based on the score, it was considered moderate enough to be used to assist decis
 print('Top 2 estimators :\n1. GrLivArea: Above grade (ground) living area square feet; 2. Neighborhood[T.NridgHt]: Northridge Heights')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="800" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="800" height="150">
 
 The model built for home value prediction was using Lasso CV with score of 0.88. It involved 186 feautes with various mean errors as shown above. Top 2 feature estimators were found as Ground Living Area and Neighborhood at Northridge Heights
 
@@ -1462,12 +1462,12 @@ Others renovatable features to consider including the followings :
 
 For return of investment on renovatable features, the difference between fix features vs renovatable features were found as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="300">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="200">
 
 The renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
 As for overall model performance :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="150">
 
 it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
