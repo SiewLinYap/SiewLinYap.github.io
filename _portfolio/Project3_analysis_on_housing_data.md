@@ -1462,12 +1462,12 @@ Others renovatable features to consider including the followings :
 
 For return of investment on renovatable features, the difference between fix features vs renovatable features were found as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="150">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="620" height="150">
 
 The renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
 As for overall model performance :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="100">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="520" height="100">
 
 it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
