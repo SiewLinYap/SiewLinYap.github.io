@@ -1046,7 +1046,7 @@ Outlier to the left( negative effect of renovate-able feature ) could be due to 
 
 
 {% highlight js %}
-# Check outlier unit to see if it is tally with the assumption 
+// Check outlier unit to see if it is tally with the assumption 
 
 residential[residential.index == 160]
 {% endhighlight %}
