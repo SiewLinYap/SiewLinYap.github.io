@@ -889,7 +889,7 @@ plt.show()
 
 Partial view of the coeefficient graph
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="650">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="600">
 
 {% highlight js %}
 no_of_variables_in_modeling2 = len(coefficient_fix_df[coefficient_fix_df.values != 0])
@@ -1032,7 +1032,7 @@ fig = plt.figure(figsize=(20,10))
 sns.barplot(x=cost_effect_comparison.index, y=cost_effect_comparison['% of Increase due to Renovation'])
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Effect_saleprice_renovatable_features.png" width="1600" height="700">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Effect_saleprice_renovatable_features.png" width="1600" height="680">
 
 {% highlight js %}
 // distribution of the effect of renovate-able features on SalePrice:
@@ -1243,7 +1243,7 @@ coefficient_mix_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="480" height="250">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="380" height="250">
 
 {% highlight js %}
 // graphical view of coefficient different :
@@ -1257,7 +1257,7 @@ plt.show()
 
 Partial view of the graphical representation of coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficient_plot_decison_making.png" width="1200" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficient_plot_decison_making.png" width="1200" height="380">
 
 Top 3 highest coefficients could be used as estimators for higher achievable predicted saleprice
 1. GrLivArea: Above grade (ground) living area square feet
@@ -1404,7 +1404,7 @@ print('Absolute value of renovation effect [Mean_Cost_of_reno_effect]')
 print(Mean_Cost_of_reno_effect)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="180">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="160">
 
 On average, the renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
@@ -1414,7 +1414,7 @@ print('Score_achived \t\t\t: {}'.format(score_fix))
 print('No_of_variables_involved \t: {}'.format(no_of_variables_in_modeling2))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="150">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="130">
 
 Based on the score, it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
 
@@ -1431,7 +1431,7 @@ Based on the score, it was considered moderate enough to be used to assist decis
 print('Top 2 estimators :\n1. GrLivArea: Above grade (ground) living area square feet; 2. Neighborhood[T.NridgHt]: Northridge Heights')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="800" height="150">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="850" height="150">
 
 The model built for home value prediction was using Lasso CV with score of 0.88. It involved 186 feautes with various mean errors as shown above. Top 2 feature estimators were found as Ground Living Area and Neighborhood at Northridge Heights
 
@@ -1462,12 +1462,12 @@ Others renovatable features to consider including the followings :
 
 For return of investment on renovatable features, the difference between fix features vs renovatable features were found as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="600" height="150">
 
 The renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
 As for overall model performance :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="150">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="500" height="100">
 
 it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
