@@ -12,15 +12,16 @@ This project utilized an existing dataset ( Ames Housing Data @ [Kaggle](https:/
 
 The project was splitted into 2 main parts
 
-#### Part 1 : Estimating the value of homes from fixed characteristics
+Part 1 : Estimating the value of homes from fixed characteristics
 Fixed characteristics refer to features that would involve major construction of the house
 
-#### Part 2 : Determine any value of *changeable* property characteristics unexplained by the *fixed* ones.
+Part 2 : Determine any value of changeable property characteristics unexplained by the fixed ones.
 The effects in dollars of the renovate-able features were evaluated. By using the model obtained in Part 1, a review of its appropriateness to be used to assist the decision making if to buy/invest in the property was assessed. The variance in price remaining explainable by those features was therefore used as an indicator to justify such investment potentials.
 
 <a id="part_1"></a>
 
-## Part 1 : Estimating the value of homes from fixed characteristics
+## Part 1 : 
+## Estimating the value of homes from fixed characteristics
 ---
 
 ### 1.1 Data Preparation & Cleaning
@@ -34,11 +35,11 @@ fig = plt.figure(figsize=(20,10))
 sns.heatmap(residential.isnull(), cmap='viridis', cbar=False, yticklabels=False)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_overview.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_overview.png" width="1200" height="400">
 
 Percentage of missing values for affected columns was calculated and tabulated as below:
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="400" height="100">
 
 Columns with >45% missing values would be dropped in view of any replacement values would be assumption that impacted the accuracy significantly
 
@@ -60,7 +61,7 @@ fig = plt.figure(figsize=(20,10))
 sns.heatmap(residential.isnull(),cbar=False, yticklabels=False, cmap='viridis')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_cleaned.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Missing_values_cleaned.png" width="1200" height="400">
 
 Result showed no more missing value. Data set was clean for further analysis.
 
@@ -96,11 +97,11 @@ plt.show()
 // sns.heatmap(residential.corr(),cmap='Blues')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Eda_heatmap1.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Eda_heatmap1.png" width="1200" height="600">
 
 Visualization of the top 5 highly correlated variables :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Pairplot_top5_correlation.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Pairplot_top5_correlation.png" width="1200" height="800">
 
 ### 1.4 : Modeling
 
@@ -870,7 +871,7 @@ plt.title('Prediction of SalePrice with Fix features only')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Prediction_sales_actual_fixed.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Prediction_sales_actual_fixed.png" width="800" height="400">
 
 {% highlight js %}
 sns.residplot(x='Actual SalePrice', y='Predicted SalePrice', data=residual_fix_data)
@@ -878,7 +879,7 @@ plt.title('Residual Plot of SalePrice with Fix features only')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Residual_plot_fixed.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Residual_plot_fixed.png" width="800" height="400">
 
 {% highlight js %}
 coefficient_fix_df = pd.DataFrame(list(zip(X_fix_test.columns, coefficient_fix)),columns=['Features','Coefficient'])
@@ -888,7 +889,7 @@ plt.show()
 
 Partial view of the coeefficient graph
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1200" height="600">
 
 {% highlight js %}
 no_of_variables_in_modeling2 = len(coefficient_fix_df[coefficient_fix_df.values != 0])
@@ -909,7 +910,7 @@ print('MSE\t = {}'.format(MSE_2))
 print('RMSE\t = {}'.format(RMSE_2))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/MSE_fixed.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/MSE_fixed.png" width="400" height="100">
 
 <a id="part2"></a>
 
@@ -1242,7 +1243,7 @@ coefficient_mix_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficients_for_decision_making.png" width="500" height="300">
 
 {% highlight js %}
 // graphical view of coefficient different :
@@ -1256,7 +1257,7 @@ plt.show()
 
 Partial view of the graphical representation of coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficient_plot_decison_making.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Coefficient_plot_decison_making.png" width="1200" height="600">
 
 Top 3 highest coefficients could be used as estimators for higher achievable predicted saleprice
 1. GrLivArea: Above grade (ground) living area square feet
@@ -1269,41 +1270,7 @@ Top 3 highest coefficients could be used as estimators for higher achievable pre
 To further identify & finalize real renovatable_features excluding physical conditions:
 
 {% highlight js %}
-renovatable_features = ['Condition1[T.Feedr]','Condition1[T.Norm]','Condition1[T.PosA]','Condition1[T.PosN]',
-                        'Condition1[T.RRAe]','Condition1[T.RRAn]','Condition1[T.RRNe]','Condition1[T.RRNn]',
-                        'Condition2[T.Feedr]','Condition2[T.Norm]','Condition2[T.PosA]','Condition2[T.PosN]',
-                        'Condition2[T.RRAe]','Condition2[T.RRAn]','Condition2[T.RRNn]','HouseStyle[T.1.5Unf]',
-                        'HouseStyle[T.1Story]','HouseStyle[T.2.5Fin]','HouseStyle[T.2.5Unf]','HouseStyle[T.2Story]',
-                        'HouseStyle[T.SFoyer]','HouseStyle[T.SLvl]','RoofStyle[T.Gable]','RoofStyle[T.Gambrel]',
-                        'RoofStyle[T.Hip]','RoofStyle[T.Mansard]','RoofStyle[T.Shed]','RoofMatl[T.CompShg]',
-                        'RoofMatl[T.Membran]','RoofMatl[T.Metal]','RoofMatl[T.Roll]','RoofMatl[T.Tar&Grv]',
-                        'RoofMatl[T.WdShake]','RoofMatl[T.WdShngl]','Exterior1st[T.AsphShn]','Exterior1st[T.BrkComm]',
-                        'Exterior1st[T.BrkFace]','Exterior1st[T.CBlock]','Exterior1st[T.CemntBd]',
-                        'Exterior1st[T.HdBoard]','Exterior1st[T.ImStucc]','Exterior1st[T.MetalSd]',
-                        'Exterior1st[T.Plywood]','Exterior1st[T.Stone]','Exterior1st[T.Stucco]',
-                        'Exterior1st[T.VinylSd]','Exterior1st[T.Wd Sdng]','Exterior1st[T.WdShing]',
-                        'Exterior2nd[T.AsphShn]','Exterior2nd[T.Brk Cmn]','Exterior2nd[T.BrkFace]',
-                        'Exterior2nd[T.CBlock]','Exterior2nd[T.CmentBd]','Exterior2nd[T.HdBoard]',
-                        'Exterior2nd[T.ImStucc]','Exterior2nd[T.MetalSd]','Exterior2nd[T.Other]',
-                        'Exterior2nd[T.Plywood]','Exterior2nd[T.Stone]','Exterior2nd[T.Stucco]',
-                        'Exterior2nd[T.VinylSd]','Exterior2nd[T.Wd Sdng]','Exterior2nd[T.Wd Shng]',
-                        'MasVnrType[T.BrkFace]','MasVnrType[T.None]','MasVnrType[T.Stone]','ExterQual[T.Fa]',
-                        'ExterQual[T.Gd]','ExterQual[T.TA]','ExterCond[T.Fa]','ExterCond[T.Gd]','ExterCond[T.Po]',
-                        'ExterCond[T.TA]','BsmtQual[T.Fa]','BsmtQual[T.Gd]','BsmtQual[T.NA]','BsmtQual[T.TA]',
-                        'BsmtCond[T.Gd]','BsmtCond[T.NA]','BsmtCond[T.Po]','BsmtCond[T.TA]','BsmtExposure[T.Gd]',
-                        'BsmtExposure[T.Mn]','BsmtExposure[T.NA]','BsmtExposure[T.No]','BsmtFinType1[T.BLQ]',
-                        'BsmtFinType1[T.GLQ]','BsmtFinType1[T.LwQ]','BsmtFinType1[T.NA]','BsmtFinType1[T.Rec]',
-                        'BsmtFinType1[T.Unf]','BsmtFinType2[T.BLQ]','BsmtFinType2[T.GLQ]','BsmtFinType2[T.LwQ]',
-                        'BsmtFinType2[T.NA]','BsmtFinType2[T.Rec]','BsmtFinType2[T.Unf]','Heating[T.GasA]',
-                        'Heating[T.GasW]','Heating[T.Grav]','Heating[T.OthW]','Heating[T.Wall]','HeatingQC[T.Fa]',
-                        'HeatingQC[T.Gd]','HeatingQC[T.Po]','HeatingQC[T.TA]','CentralAir[T.Y]','Electrical[T.FuseF]',
-                        'Electrical[T.FuseP]','Electrical[T.Mix]','Electrical[T.SBrkr]','KitchenQual[T.Fa]',
-                        'KitchenQual[T.Gd]','KitchenQual[T.TA]','GarageFinish[T.NA]','GarageFinish[T.RFn]',
-                        'GarageFinish[T.Unf]','GarageQual[T.Fa]','GarageQual[T.Gd]','GarageQual[T.NA]',
-                        'GarageQual[T.Po]','GarageQual[T.TA]','GarageCond[T.Fa]','GarageCond[T.Gd]',
-                        'GarageCond[T.NA]','GarageCond[T.Po]','GarageCond[T.TA]','SaleCondition[T.AdjLand]',
-                        'SaleCondition[T.Alloca]','SaleCondition[T.Family]','SaleCondition[T.Normal]',
-                        'SaleCondition[T.Partial]','OverallQual','OverallCond','Id']
+renovatable_features = ['Condition1[T.Feedr]','Condition1[T.Norm]','Condition1[T.PosA]','Condition1[T.PosN]','Condition1[T.RRAe]','Condition1[T.RRAn]','Condition1[T.RRNe]','Condition1[T.RRNn]','Condition2[T.Feedr]','Condition2[T.Norm]','Condition2[T.PosA]','Condition2[T.PosN]','Condition2[T.RRAe]','Condition2[T.RRAn]','Condition2[T.RRNn]','HouseStyle[T.1.5Unf]','HouseStyle[T.1Story]','HouseStyle[T.2.5Fin]','HouseStyle[T.2.5Unf]','HouseStyle[T.2Story]','HouseStyle[T.SFoyer]','HouseStyle[T.SLvl]','RoofStyle[T.Gable]','RoofStyle[T.Gambrel]','RoofStyle[T.Hip]','RoofStyle[T.Mansard]','RoofStyle[T.Shed]','RoofMatl[T.CompShg]','RoofMatl[T.Membran]','RoofMatl[T.Metal]','RoofMatl[T.Roll]','RoofMatl[T.Tar&Grv]','RoofMatl[T.WdShake]','RoofMatl[T.WdShngl]','Exterior1st[T.AsphShn]','Exterior1st[T.BrkComm]','Exterior1st[T.BrkFace]','Exterior1st[T.CBlock]','Exterior1st[T.CemntBd]','Exterior1st[T.HdBoard]','Exterior1st[T.ImStucc]','Exterior1st[T.MetalSd]','Exterior1st[T.Plywood]','Exterior1st[T.Stone]','Exterior1st[T.Stucco]','Exterior1st[T.VinylSd]','Exterior1st[T.WdSdng]','Exterior1st[T.WdShing]','Exterior2nd[T.AsphShn]','Exterior2nd[T.BrkCmn]','Exterior2nd[T.BrkFace]','Exterior2nd[T.CBlock]','Exterior2nd[T.CmentBd]','Exterior2nd[T.HdBoard]','Exterior2nd[T.ImStucc]','Exterior2nd[T.MetalSd]','Exterior2nd[T.Other]','Exterior2nd[T.Plywood]','Exterior2nd[T.Stone]','Exterior2nd[T.Stucco]','Exterior2nd[T.VinylSd]','Exterior2nd[T.WdSdng]','Exterior2nd[T.WdShng]','MasVnrType[T.BrkFace]','MasVnrType[T.None]','MasVnrType[T.Stone]','ExterQual[T.Fa]','ExterQual[T.Gd]','ExterQual[T.TA]','ExterCond[T.Fa]','ExterCond[T.Gd]','ExterCond[T.Po]','ExterCond[T.TA]','BsmtQual[T.Fa]','BsmtQual[T.Gd]','BsmtQual[T.NA]','BsmtQual[T.TA]','BsmtCond[T.Gd]','BsmtCond[T.NA]','BsmtCond[T.Po]','BsmtCond[T.TA]','BsmtExposure[T.Gd]','BsmtExposure[T.Mn]','BsmtExposure[T.NA]','BsmtExposure[T.No]','BsmtFinType1[T.BLQ]','BsmtFinType1[T.GLQ]','BsmtFinType1[T.LwQ]','BsmtFinType1[T.NA]','BsmtFinType1[T.Rec]','BsmtFinType1[T.Unf]','BsmtFinType2[T.BLQ]','BsmtFinType2[T.GLQ]','BsmtFinType2[T.LwQ]','BsmtFinType2[T.NA]','BsmtFinType2[T.Rec]','BsmtFinType2[T.Unf]','Heating[T.GasA]','Heating[T.GasW]','Heating[T.Grav]','Heating[T.OthW]','Heating[T.Wall]','HeatingQC[T.Fa]','HeatingQC[T.Gd]','HeatingQC[T.Po]','HeatingQC[T.TA]','CentralAir[T.Y]','Electrical[T.FuseF]','Electrical[T.FuseP]','Electrical[T.Mix]','Electrical[T.SBrkr]','KitchenQual[T.Fa]','KitchenQual[T.Gd]','KitchenQual[T.TA]','GarageFinish[T.NA]','GarageFinish[T.RFn]','GarageFinish[T.Unf]','GarageQual[T.Fa]','GarageQual[T.Gd]','GarageQual[T.NA]','GarageQual[T.Po]','GarageQual[T.TA]','GarageCond[T.Fa]','GarageCond[T.Gd]','GarageCond[T.NA]','GarageCond[T.Po]','GarageCond[T.TA]','SaleCondition[T.AdjLand]','SaleCondition[T.Alloca]','SaleCondition[T.Family]','SaleCondition[T.Normal]','SaleCondition[T.Partial]','OverallQual','OverallCond','Id']
 {% endhighlight %}
 
 {% highlight js %}
@@ -1325,7 +1292,7 @@ renovateable_coef_df.sort_values('Coefficient', ascending=False)
 
 Partial view of the tabulated coefficients as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_in_price_remaining.png" width="400" height="200">
 
 {% highlight js %}
 // graphical view of coefficient different :
@@ -1337,7 +1304,7 @@ coefficient_plot_renovateable_postive.sort_values('Coefficient', ascending=True)
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_plot_price_remaining.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Variance_plot_price_remaining.png" width="1200" height="600">
 
 Graph above showed the top 3 estimators of renovatable features were :
 1. OverallQual: Rates the overall material and finish of the house
@@ -1366,7 +1333,7 @@ sns.distplot(reno_feature_positive_increase_SP['OverallQual'], ax=ax0)
 sns.distplot(reno_feature_positive_increase_SP['OverallCond'], ax=ax1)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Overall_quality_condition_variance_price.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Overall_quality_condition_variance_price.png" width="1200" height="400">
 
 As data at this point already filtered down to only those with positive increase in SP due to renovation,
 The plot above showed that :
@@ -1393,7 +1360,7 @@ count_plot_df.sort_values(['Total_unit_positive_reno_effect'], ascending=False)
 
 Partial view of the tabulated sub-dataframe as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Count_plot_dataframe_table.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Count_plot_dataframe_table.png" width="400" height="200">
 
 {% highlight js %}
 effective_reno_features_positive_predictedSP = count_plot_df[count_plot_df['Total_unit_positive_reno_effect']!=0]
@@ -1403,7 +1370,7 @@ plt.show()
 
 Partial view of the renovatable features as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/List of renovatable features_graph.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/List of renovatable features_graph.png" width="1200" height="600">
 
 Top 3 estimators of renovatable features were found as :
 
@@ -1437,7 +1404,7 @@ print('Absolute value of renovation effect [Mean_Cost_of_reno_effect]')
 print(Mean_Cost_of_reno_effect)
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="400" height="100">
 
 On average, the renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
@@ -1447,7 +1414,7 @@ print('Score_achived \t\t\t: {}'.format(score_fix))
 print('No_of_variables_involved \t: {}'.format(no_of_variables_in_modeling2))
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="300" height="50">
 
 Based on the score, it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
 
@@ -1464,7 +1431,7 @@ Based on the score, it was considered moderate enough to be used to assist decis
 print('Top 2 estimators :\n1. GrLivArea: Above grade (ground) living area square feet; 2. Neighborhood[T.NridgHt]: Northridge Heights')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="600" height="100">
 
 The model built for home value prediction was using Lasso CV with score of 0.88. It involved 186 feautes with various mean errors as shown above. Top 2 feature estimators were found as Ground Living Area and Neighborhood at Northridge Heights
 
@@ -1495,12 +1462,12 @@ Others renovatable features to consider including the followings :
 
 For return of investment on renovatable features, the difference between fix features vs renovatable features were found as below :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Mean prediction gap_fix vs mix.png" width="400" height="100">
 
 The renovation didn't really add into higher saleprice justified based on fix features. Fix features were found still the key factors determining the SalePrice
 
 As for overall model performance :
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="800" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Final model performance_printout.png" width="300" height="50">
 
 it was considered moderate enough to be used to assist decision making on investment potential. However, there were 186 variables needed in order to achive this score. Data completeness, data quality and data integrity were therefore very important and critical for model performance and accuracy. It was thus advisable to use it as reference and continue monitoring, timely adjustment would still be needed.
