@@ -54,7 +54,7 @@ Statistic of the remaining columns was reviewed in order to decide the best esti
 After imputation had been done, verification was carried out to check if there was any escapee during the replacement process
 
 {% highlight js %}
-# final verification if anymore missing values
+// final verification if anymore missing values
 
 fig = plt.figure(figsize=(20,10))
 sns.heatmap(residential.isnull(),cbar=False, yticklabels=False, cmap='viridis')
