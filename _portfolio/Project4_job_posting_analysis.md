@@ -63,7 +63,7 @@ Job Postings @ [MyCareersFuture](https://www.mycareersfuture.sg)
 * Summarizing the overall features that hold greatest significance in terms of Salary Prediction and Job Category Classification
 
 
-<a id="analytical_approach"></a>
+<a id="analytical_outcomes"></a>
 
 ## Analytical Outcomes :
 ---
