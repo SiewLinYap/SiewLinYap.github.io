@@ -889,7 +889,7 @@ plt.show()
 
 Partial view of the coeefficient graph
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="550">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Partial_view_coefficient.png" width="1600" height="530">
 
 {% highlight js %}
 no_of_variables_in_modeling2 = len(coefficient_fix_df[coefficient_fix_df.values != 0])
@@ -1433,7 +1433,7 @@ Based on the score, it was considered moderate enough to be used to assist decis
 print('Top 2 estimators :\n1. GrLivArea: Above grade (ground) living area square feet; 2. Neighborhood[T.NridgHt]: Northridge Heights')
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="940" height="120">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Summary_part1.png" width="940" height="110">
 
 The model built for home value prediction was using Lasso CV with score of 0.88. It involved 186 feautes with various mean errors as shown above. Top 2 feature estimators were found as Ground Living Area and Neighborhood at Northridge Heights
 
