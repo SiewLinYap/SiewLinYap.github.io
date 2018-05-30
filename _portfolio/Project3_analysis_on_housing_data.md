@@ -13,10 +13,10 @@ This project utilized an existing dataset ( Ames Housing Data @ [Kaggle](https:/
 The project was splitted into 2 main parts
 
 Part 1 : Estimating the value of homes from fixed characteristics
-Fixed characteristics refer to features that would involve major construction of the house
+* Fixed characteristics refer to features that would involve major construction of the house
 
 Part 2 : Determine any value of changeable property characteristics unexplained by the fixed ones.
-The effects in dollars of the renovate-able features were evaluated. By using the model obtained in Part 1, a review of its appropriateness to be used to assist the decision making if to buy/invest in the property was assessed. The variance in price remaining explainable by those features was therefore used as an indicator to justify such investment potentials.
+* The effects in dollars of the renovate-able features were evaluated. By using the model obtained in Part 1, a review of its appropriateness to be used to assist the decision making if to buy/invest in the property was assessed. The variance in price remaining explainable by those features was therefore used as an indicator to justify such investment potentials.
 
 <a id="part_1"></a>
 
