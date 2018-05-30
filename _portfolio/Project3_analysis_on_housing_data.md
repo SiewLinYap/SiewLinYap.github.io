@@ -39,7 +39,7 @@ sns.heatmap(residential.isnull(), cmap='viridis', cbar=False, yticklabels=False)
 
 Percentage of missing values for affected columns was calculated and tabulated as below:
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="550" height="520">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Tabulated_missing_values.png" width="550" height="540">
 
 Columns with >45% missing values would be dropped in view of any replacement values would be assumption that impacted the accuracy significantly
 
