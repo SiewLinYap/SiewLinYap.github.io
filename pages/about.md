@@ -1,7 +1,6 @@
 ---
 layout: page
-title: About
-subtitle: "ME" 
+title: About ME
 permalink: /about/
 feature-img: "assets/img/pexels/Book.jpeg"
 
