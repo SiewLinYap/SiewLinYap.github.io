@@ -940,7 +940,7 @@ model_gs.best_estimator_.score(Xs_mix_test, y_mix_test)
 
 Model score was found very close to earlier score obtained in Part 1, indicating there could be little/no difference caused by renovation effect. Model using LassoCV was finalized and continued with the calculation on cost of renovation effects.
 
-#### 2.1 The effect in dollars of SalePrice with renovate-able features ---
+#### 2.1 The effect in dollars of SalePrice with renovate-able features
 
 Relevant information was tabulated to summarize the effect in dollars on SalePrice with renovatable features
 
