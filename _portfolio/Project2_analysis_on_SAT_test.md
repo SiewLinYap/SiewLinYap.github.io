@@ -727,7 +727,7 @@ sns.pairplot(df_sat, hue='State', size=3, aspect=1)
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_of_all_variables.png" width="1400" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_of_all_variables.png" width="1600" height="800">
 
 
 ***
