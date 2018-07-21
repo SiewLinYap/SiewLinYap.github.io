@@ -9,15 +9,9 @@ date: July, 21 2018
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 
+Exploratory data analysis is an important and essential part of any data science project. It helps to prepare, process and visualize the data for better preliminary judgement. A high quality and comprehensive EDA eases the modeling and leads to a more reliable and conclusive outcomes.
 
-
-## Exploratory Data Analysis (EDA) on SAT scores
-
----
-
-Exploratory data analysis is an important and essential part of any data science project. It helps to prepare, process and visualize the data for better preliminary judgement. A high quality and comprehensive EDA eases the modeling and lead to a more reliable and conclusive outcomes.
-
-In this aspect, a set of SAT scores by state was used to practise various EDA techniques and attempt to use different plots to assist the understanding of the dataset and visualize them to gain insights and draw conclusions.
+This project is therefore focusing solely on EDA and utilizes various techniques to present the data and its related analysis. A set of SAT scores by state was used to practise various EDA techniques and attempt to use different plots to assist the understanding of the dataset and visualize them to gain insights and draw conclusions.
 
 
 
@@ -72,13 +66,7 @@ with open(sat,'rU') as f:
         k2_values.append(v_temp[1])
         k3_values.append(v_temp[2])
         k4_values.append(v_temp[3])
-
-
 ```
-
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/ipykernel_launcher.py:1: DeprecationWarning: 'U' mode is deprecated
-      """Entry point for launching an IPython kernel.
-
 
 
 ```python
@@ -727,23 +715,7 @@ sns.distplot(df_sat['Verbal'], bins=30, kde=False, color='g', ax=ax[1])
 sns.distplot(df_sat['Math'], bins=30, kde=False, color='r', ax=ax[2])
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-
-
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x110a3ab70>
-
-
-
-
-![png](output_27_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_plots_all_columns.png" width="1600" height="600">
 
 
 ### 3.2 Get an overview of the correlation of each variable in the dataset
@@ -755,14 +727,7 @@ sns.pairplot(df_sat, hue='State', size=3, aspect=1)
 ```
 
 
-
-
-    <seaborn.axisgrid.PairGrid at 0x110b516a0>
-
-
-
-
-![png](output_29_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_of_all_variables.png" width="1600" height="600">
 
 
 ***
@@ -793,12 +758,9 @@ plt.xlabel('Score')
 
 
 
-    Text(0.5,0,'Score')
 
 
-
-
-![png](output_33_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/stacked_bar_math_vs_verbal.png" width="1600" height="600">
 
 
 
@@ -815,23 +777,8 @@ sns.boxplot(data=df_sat['Math'], orient='h', ax=ax[0][2], color='purple')
 sns.distplot(df_sat['Math'], bins=30, ax=ax[1][2], color='purple')
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
-
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1154ffdd8>
-
-
-
-
-![png](output_34_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/outlier_comparison_overview.png" width="1600" height="600">
 
 
 > #### Observation :
@@ -851,8 +798,7 @@ ax = plt.title('Boxplot of SAT Performance')
 ax = plt.text(1,1,"Shouldn't plot Rate together as it has different score scale", fontsize=14)
 ```
 
-
-![png](output_36_0.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_ordinary.png" width="1600" height="600">
 
 
 ***
@@ -889,8 +835,7 @@ ax = sns.boxplot(data=df_sat_std, orient='h', palette='Set2')
 ax = plt.title('Standardized Boxplot for SAT Performance')
 ```
 
-
-![png](output_40_0.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_standardized_scale.png" width="1600" height="600">
 
 
 
@@ -1386,19 +1331,9 @@ plt.legend()
 plt.title('Distribution of Verbal Score')
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_verbal_scores.png" width="1600" height="600">
 
-
-
-
-    Text(0.5,1,'Distribution of Verbal Score')
-
-
-
-
-![png](output_51_2.png)
 
 
 #### 3.4.c) Difference between the Verbal and Math scores 
@@ -1830,13 +1765,8 @@ sns.heatmap(df_sat_corr)
 
 
 
+<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_matrix.png" width="1600" height="600">
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1176d26d8>
-
-
-
-
-![png](output_61_1.png)
 
 
 > #### Observations:
@@ -2108,14 +2038,8 @@ plt.show()
 
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
-
-
-![png](output_74_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1600" height="600">
 
 
 
@@ -2128,13 +2052,7 @@ sns.violinplot(data=df_sat_percentile[['Rate', 'Rate_percentile']], ax=ax[1])
 
 
 
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1188a3828>
-
-
-
-
-![png](output_75_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_comparison_for_percentile.png" width="1600" height="600">
 
 
 > Observations :
