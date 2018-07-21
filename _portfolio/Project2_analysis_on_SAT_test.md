@@ -1765,7 +1765,7 @@ sns.heatmap(df_sat_corr)
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_matrix.png" width="800" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_matrix.png" width="600" height="300">
 
 
 
@@ -2039,7 +2039,7 @@ plt.show()
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1000" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1000" height="350">
 
 
 
@@ -2052,7 +2052,7 @@ sns.violinplot(data=df_sat_percentile[['Rate', 'Rate_percentile']], ax=ax[1])
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_comparison_for_percentile.png" width="800" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_comparison_for_percentile.png" width="700" height="400">
 
 
 > Observations :
