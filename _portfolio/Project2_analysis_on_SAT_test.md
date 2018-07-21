@@ -576,7 +576,7 @@ df_sat.dtypes
 
 
 > #### Observation on the difference :
-> - If we did not convert the string column values to float in dictionary, the columns in the DataFrame are of type `object` (which are string values, essentially). 
+> - If we do not convert the string column values to float in dictionary, the columns in the DataFrame are of type `object` (which are string values, essentially). 
 
 
 
@@ -760,7 +760,7 @@ plt.xlabel('Score')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/stacked_bar_math_vs_verbal.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/stacked_bar_math_vs_verbal.png" width="1000" height="400">
 
 
 
@@ -778,7 +778,7 @@ sns.distplot(df_sat['Math'], bins=30, ax=ax[1][2], color='purple')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/outlier_comparison_overview.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/outlier_comparison_overview.png" width="1600" height="400">
 
 
 > #### Observation :
@@ -798,7 +798,7 @@ ax = plt.title('Boxplot of SAT Performance')
 ax = plt.text(1,1,"Shouldn't plot Rate together as it has different score scale", fontsize=14)
 ```
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_ordinary.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_ordinary.png" width="1600" height="400">
 
 
 ***
@@ -835,7 +835,7 @@ ax = sns.boxplot(data=df_sat_std, orient='h', palette='Set2')
 ax = plt.title('Standardized Boxplot for SAT Performance')
 ```
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_standardized_scale.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_standardized_scale.png" width="1600" height="400">
 
 
 
@@ -1332,7 +1332,7 @@ plt.title('Distribution of Verbal Score')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_verbal_scores.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_verbal_scores.png" width="1600" height="400">
 
 
 
@@ -1765,7 +1765,7 @@ sns.heatmap(df_sat_corr)
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_matrix.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/correlation_matrix.png" width="1600" height="400">
 
 
 
@@ -2039,7 +2039,7 @@ plt.show()
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1600" height="400">
 
 
 
@@ -2052,7 +2052,7 @@ sns.violinplot(data=df_sat_percentile[['Rate', 'Rate_percentile']], ax=ax[1])
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_comparison_for_percentile.png" width="1600" height="600">
+<img src="{{ site.baseurl }}/assets/img/portfolio/boxplot_comparison_for_percentile.png" width="1400" height="400">
 
 
 > Observations :
