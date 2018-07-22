@@ -1,6 +1,6 @@
 ---
 layout: post
-title: It's not the end. It's just the beginning
+title: It's Not The End. It's Just The Beginning
 feature-img: "assets/img/pexels/rainbow.jpeg"
 
 ---
