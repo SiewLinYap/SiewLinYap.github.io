@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Analysis on SAT Test
-img: "assets/img/portfolio/SAT_Test.png"
+img: "assets/img/portfolio/SAT_test_logo.png"
 date: July, 21 2018
 
 ---
@@ -760,7 +760,7 @@ plt.xlabel('Score')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/stacked_bar_math_vs_verbal.png" width="1000" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/stacked_bar_math_vs_verbal.png" width="1000" height="350">
 
 
 
@@ -778,7 +778,7 @@ sns.distplot(df_sat['Math'], bins=30, ax=ax[1][2], color='purple')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/outlier_comparison_overview.png" width="1600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/outlier_comparison_overview.png" width="1800" height="400">
 
 
 > #### Observation :
@@ -1332,7 +1332,7 @@ plt.title('Distribution of Verbal Score')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_verbal_scores.png" width="1600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_verbal_scores.png" width="1600" height="350">
 
 
 
@@ -2039,7 +2039,7 @@ plt.show()
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1000" height="350">
+<img src="{{ site.baseurl }}/assets/img/portfolio/distribution_comparison_for_percentile.png" width="1200" height="350">
 
 
 
