@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A New Perspective on Clean Data
-feature-img: "assets/img/pexels/HS_crab_post_pic.jpg"
+feature-img: "assets/img/pexels/HS_crab_post_pic.png"
 
 ---
 
