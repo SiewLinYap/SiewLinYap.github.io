@@ -576,7 +576,7 @@ df_sat.dtypes
 
 
 > #### Observation on the difference :
-> - If we do not convert the string column values to float in dictionary, the columns in the DataFrame are of type `object` (which are string values, essentially). 
+> - If we do not convert the string column values to float in dictionary, the columns in the DataFrame are of type `object`. But when using read_csv(), the data type is framed up correctly without additional adjustment. Using read_csv() will be a better and faster option. 
 
 
 
