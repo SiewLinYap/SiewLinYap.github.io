@@ -235,9 +235,8 @@ df_sat_dict.tail()
 
 
 
-
+Last row is the sum of all rows above, need to remove this from analysis to avoid data being skewed
 ```python
-# Last row is the sum of all rows above, need to remove this from analysis to avoid data being skewed
 df_sat_dict.drop(index=51, inplace=True)
 ```
 
@@ -318,7 +317,6 @@ df_sat_dict.tail()
 
 ```python
 df_sat_dict.dtypes 
-# data type for all variables were found as object types (including those that supposed to be numeric)
 ```
 
 
@@ -330,7 +328,7 @@ df_sat_dict.dtypes
     Math      object
     dtype: object
 
-
+Data type for all variables above were found as object types (including those that supposed to be numeric)
 
 
 ```python
@@ -603,8 +601,7 @@ data_dict['Data_type'] = list(df_sat.dtypes)
 
 
 ```python
-data_dict['Description'] = ['US State of SAT scores', 'Rate of students that take the SAT in that state', 
-                            'Mean verbal score in that state', 'Mean math score in that state']
+data_dict['Description'] = ['US State of SAT scores', 'Rate of students that take the SAT in that state', 'Mean verbal score in that state', 'Mean math score in that state']
 ```
 
 
