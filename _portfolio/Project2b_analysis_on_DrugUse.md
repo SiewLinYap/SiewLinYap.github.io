@@ -2813,7 +2813,7 @@ sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="700" height="500">
 
 
 2nd examination through stats library on p-value
@@ -2842,7 +2842,7 @@ sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFre
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="700" height="500">
 
 
 
