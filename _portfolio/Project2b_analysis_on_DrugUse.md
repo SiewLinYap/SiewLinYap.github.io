@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Analysis on Drug Usage
-img: "assets/img/portfolio/Drug_logo3.png"
+img: "assets/img/portfolio/Medicine_logo1.png"
 date: July, 29 2018
 
 ---
