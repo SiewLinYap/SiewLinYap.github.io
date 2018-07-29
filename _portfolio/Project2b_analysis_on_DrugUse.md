@@ -9,7 +9,7 @@ date: July, 29 2018
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 
-This is another exercise to practise EDA using various techniques. Dataset was obtained from [Public Source] (https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
+This is another exercise to practise EDA using various techniques. Dataset was obtained from @ [Public Source] (https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
 
 
 
@@ -2814,7 +2814,7 @@ sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1000" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="800" height="500">
 
 
 2nd examination through stats library on p-value
@@ -2843,7 +2843,7 @@ sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFre
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1000" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="800" height="500">
 
 
 
@@ -3267,7 +3267,7 @@ sns.boxplot(data=df_comparison,orient='h')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1000" height="200">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="700" height="300">
 
 
 
