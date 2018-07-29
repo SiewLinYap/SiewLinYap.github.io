@@ -9,7 +9,7 @@ date: July, 29 2018
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 
-This is another exercise to practise EDA using various techniques. Dataset was obtained from https://www.github.com/fivethirtyeight/data/tree/master/drug-use-by-age. The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
+This is another exercise to practise EDA using various techniques. Dataset was obtained from [Public Source](https://www.github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
 
 
 #### Package imports
@@ -2792,12 +2792,12 @@ In the data exploration process, it is common that we would need to generate som
 > #### Question to explore :
 > - Correlation matrix showed significant correlation (0.98) of oxycontin-use vs pain-reliever-use.
 > - Are the drug users in pain-reliever having the similar age group distribution as the drug users in oxycontine?
-$$ H_0: Use_{pain-reliever} = Use_{oxycontin} $$
-$$ H_1: Use_{pain-reliever} \neq Use_{oxycontin} $$
+> - * $$ H_0: Use_{pain-reliever} = Use_{oxycontin} $$
+> - * $$ H_1: Use_{pain-reliever} \neq Use_{oxycontin} $$
 > - But for their frequencies, correlation was only at 0.56. Are these correlation statistically significant?
 > - Among these 2 groups of drug users, are they taking the pain-reliever as frequent as oxycontine?
-$$ H_0: frequency_{pain-reliever} = frequency_{oxycontin} $$
-$$ H_1: frequency_{pain-reliever} \neq frequency_{oxycontin} $$
+> - * $$ H_0: frequency_{pain-reliever} = frequency_{oxycontin} $$
+> - * $$ H_1: frequency_{pain-reliever} \neq frequency_{oxycontin} $$
 
 > #### Deliverables :
 > - join-plot
@@ -2813,7 +2813,7 @@ sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="600" height="500">
 
 
 2nd examination through stats library on p-value
@@ -2842,7 +2842,7 @@ sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFre
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="800" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="600" height="500">
 
 
 
