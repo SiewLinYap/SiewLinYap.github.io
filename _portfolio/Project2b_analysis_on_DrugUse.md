@@ -9,8 +9,7 @@ date: July, 29 2018
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 
-This is another exercise to practise EDA using various techniques. Dataset was obtained from @ [Public Source] (https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
-
+This is another exercise to practise EDA using various techniques. Dataset was obtained from @ [Public Source] (https://www.github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
 
 
 #### Package imports
