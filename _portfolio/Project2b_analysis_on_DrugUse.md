@@ -9,7 +9,7 @@ date: July, 29 2018
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 
-This is another exercise to practise EDA using various techniques. Dataset was obtained from https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age. The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
+This is another exercise to practise EDA using various techniques. Dataset was obtained from [Public Source] (https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age). The challenge for this dataset is its size. It only has 17 rows but with 28 columns. Different thought process is required in order to process this type of data. 
 
 
 
@@ -1363,7 +1363,7 @@ plt.ylabel('sample size')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/SampleSize_by_age.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/SampleSize_by_age.png" width="1600" height="400">
 
 
 > - Sample size for age from 12-21 is more stable ranging from 2000 to 3000+
@@ -2296,7 +2296,7 @@ plt.title('Distribution of Population by Age for Various Drug Types')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugUse.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugUse.png" width="1600" height="400">
 
 
 > - alcohol is the highest intake in all ages/age groups
@@ -2313,7 +2313,7 @@ plt.title('Distribution of Population by Age for Various Drug Types')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugUse.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugUse.png" width="1600" height="400">
 
 
 #### 2.5a : Visualization of drug data by Frequency in stacked-bar chart
@@ -2326,7 +2326,7 @@ plt.title('Distribution of Drug Intake Freqeuncy by Age')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugFreq.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugFreq.png" width="1600" height="400">
 
 
 > - heroin was the drug with highest frequency of intake age 19 and age group of 35-49
@@ -2343,7 +2343,7 @@ plt.title('Distribution of Drug Frequency by Age for Various Drug Types')
 ```
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugFreq.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugFreq.png" width="1600" height="400">
 
 
 
@@ -2694,7 +2694,7 @@ plt.title('Boxplot on Standardized Scale for DrugUse')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugUse.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugUse.png" width="1600" height="400">
 
 
 Comparision of various drugFrequency spread on same scale
@@ -2708,7 +2708,7 @@ plt.title('Boxplot on Standardized Scale for DrugFrequency')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugFreq.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugFreq.png" width="1600" height="400">
 
 
 > - drugFrequency data is more scatter and with more outliers as compared to drugUse data
@@ -2729,7 +2729,7 @@ sns.heatmap(drugUse_temp.corr(),cmap='RdBu_r',annot=True)
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugUse.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugUse.png" width="1600" height="500">
 
 
 > - inhalant-use has almost no to negative correlation to the rest of the drug use
@@ -2761,7 +2761,7 @@ sns.heatmap(data=drugFrequency_temp.corr(), cmap='RdBu_r', annot=True)
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugFreq.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugFreq.png" width="1600" height="500">
 
 
 > - mixture of positive and negative correlation among various drugFrequency
@@ -2793,12 +2793,12 @@ In the data exploration process, it is common that we would need to generate som
 > #### Question to explore :
 > - Correlation matrix showed significant correlation (0.98) of oxycontin-use vs pain-reliever-use.
 > - Are the drug users in pain-reliever having the similar age group distribution as the drug users in oxycontine?
-> $$ H_0: Use_{pain-reliever} = Use_{oxycontin} $$
-> $$ H_1: Use_{pain-reliever} \neq Use_{oxycontin} $$
+$$ H_0: Use_{pain-reliever} = Use_{oxycontin} $$
+$$ H_1: Use_{pain-reliever} \neq Use_{oxycontin} $$
 > - But for their frequencies, correlation was only at 0.56. Are these correlation statistically significant?
 > - Among these 2 groups of drug users, are they taking the pain-reliever as frequent as oxycontine?
-> $$ H_0: frequency_{pain-reliever} = frequency_{oxycontin} $$
-> $$ H_1: frequency_{pain-reliever} \neq frequency_{oxycontin} $$
+$$ H_0: frequency_{pain-reliever} = frequency_{oxycontin} $$
+$$ H_1: frequency_{pain-reliever} \neq frequency_{oxycontin} $$
 
 > #### Deliverables :
 > - join-plot
@@ -2814,7 +2814,7 @@ sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1600" height="500">
 
 
 2nd examination through stats library on p-value
@@ -2843,7 +2843,7 @@ sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFre
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1600" height="500">
 
 
 
@@ -2890,7 +2890,7 @@ sns.distplot(drugFrequency_temp['pain-releiver-frequency'], bins=30, ax=ax[1])
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_handling.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_handling.png" width="1600" height="400">
 
 
 > 4 outlier data points were observed
@@ -3267,7 +3267,7 @@ sns.boxplot(data=df_comparison,orient='h')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1600" height="400">
 
 
 
@@ -3285,7 +3285,7 @@ sns.distplot(df_comparison.dropna()['No outliers'], bins=30, ax=ax[1][1], color=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_comparison_overview.png" width="1600" height="800">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_comparison_overview.png" width="1600" height="400">
 
 
 
