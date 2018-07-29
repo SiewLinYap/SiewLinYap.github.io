@@ -2814,7 +2814,7 @@ sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1600" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1000" height="500">
 
 
 2nd examination through stats library on p-value
@@ -2843,7 +2843,7 @@ sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFre
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1600" height="500">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1000" height="500">
 
 
 
@@ -3267,7 +3267,7 @@ sns.boxplot(data=df_comparison,orient='h')
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1600" height="400">
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1000" height="200">
 
 
 
@@ -3285,8 +3285,7 @@ sns.distplot(df_comparison.dropna()['No outliers'], bins=30, ax=ax[1][1], color=
 
 
 
-<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_comparison_overview.png" width="1600" height="400">
-
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_comparison_overview.png" width="1600" height="300">
 
 
 ## Key Learnings
