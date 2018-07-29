@@ -1363,13 +1363,7 @@ plt.ylabel('sample size')
 
 
 
-
-    Text(0,0.5,'sample size')
-
-
-
-
-![png](output_27_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/SampleSize_by_age.png" width="1600" height="800">
 
 
 > - Sample size for age from 12-21 is more stable ranging from 2000 to 3000+
@@ -2302,13 +2296,7 @@ plt.title('Distribution of Population by Age for Various Drug Types')
 
 
 
-
-    Text(0.5,1,'Distribution of Population by Age for Various Drug Types')
-
-
-
-
-![png](output_40_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugUse.png" width="1600" height="800">
 
 
 > - alcohol is the highest intake in all ages/age groups
@@ -2325,14 +2313,7 @@ plt.title('Distribution of Population by Age for Various Drug Types')
 ```
 
 
-
-
-    Text(0.5,1,'Distribution of Population by Age for Various Drug Types')
-
-
-
-
-![png](output_43_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugUse.png" width="1600" height="800">
 
 
 #### 2.5a : Visualization of drug data by Frequency in stacked-bar chart
@@ -2345,14 +2326,7 @@ plt.title('Distribution of Drug Intake Freqeuncy by Age')
 ```
 
 
-
-
-    Text(0.5,1,'Distribution of Drug Intake Freqeuncy by Age')
-
-
-
-
-![png](output_45_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_stackedBar_drugFreq.png" width="1600" height="800">
 
 
 > - heroin was the drug with highest frequency of intake age 19 and age group of 35-49
@@ -2369,14 +2343,8 @@ plt.title('Distribution of Drug Frequency by Age for Various Drug Types')
 ```
 
 
+<img src="{{ site.baseurl }}/assets/img/portfolio/Dist_line_drugFreq.png" width="1600" height="800">
 
-
-    Text(0.5,1,'Distribution of Drug Frequency by Age for Various Drug Types')
-
-
-
-
-![png](output_48_1.png)
 
 
 > - Visualization through stacked bar gave better comparison view as compared to line plot
@@ -2726,13 +2694,7 @@ plt.title('Boxplot on Standardized Scale for DrugUse')
 
 
 
-
-    Text(0.5,1,'Boxplot on Standardized Scale for DrugUse')
-
-
-
-
-![png](output_54_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugUse.png" width="1600" height="800">
 
 
 Comparision of various drugFrequency spread on same scale
@@ -2746,13 +2708,7 @@ plt.title('Boxplot on Standardized Scale for DrugFrequency')
 
 
 
-
-    Text(0.5,1,'Boxplot on Standardized Scale for DrugFrequency')
-
-
-
-
-![png](output_56_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Boxplot_drugFreq.png" width="1600" height="800">
 
 
 > - drugFrequency data is more scatter and with more outliers as compared to drugUse data
@@ -2773,13 +2729,7 @@ sns.heatmap(drugUse_temp.corr(),cmap='RdBu_r',annot=True)
 
 
 
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x11c9bf470>
-
-
-
-
-![png](output_60_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugUse.png" width="1600" height="800">
 
 
 > - inhalant-use has almost no to negative correlation to the rest of the drug use
@@ -2794,13 +2744,7 @@ sns.pairplot(drugUse_temp[['alcohol-use','marijuana-use','hallucinogen-use','pai
 
 
 
-
-    <seaborn.axisgrid.PairGrid at 0x11cd36f98>
-
-
-
-
-![png](output_63_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top4_popular_drugUse.png" width="1600" height="800">
 
 
 > - all 4 drugs showed positive correlation to each other
@@ -2817,13 +2761,7 @@ sns.heatmap(data=drugFrequency_temp.corr(), cmap='RdBu_r', annot=True)
 
 
 
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x11ac3b400>
-
-
-
-
-![png](output_66_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Correlation_drugFreq.png" width="1600" height="800">
 
 
 > - mixture of positive and negative correlation among various drugFrequency
@@ -2839,12 +2777,7 @@ sns.pairplot(drugFrequency_temp[['alcohol-frequency','marijuana-frequency','hall
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x121664f60>
-
-
-
-
-![png](output_69_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Top4_popular_drugFreq.png" width="1600" height="800">
 
 
 > - No significant correlation was observed for all the 4 drugs frequency
@@ -2879,21 +2812,9 @@ In the data exploration process, it is common that we would need to generate som
 sns.jointplot(x='pain-releiver-use', y='oxycontin-use', data=drugUse_temp, kind='reg')
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
-
-
-
-    <seaborn.axisgrid.JointGrid at 0x120580940>
-
-
-
-
-![png](output_75_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugUse.png" width="1600" height="800">
 
 
 2nd examination through stats library on p-value
@@ -2920,21 +2841,9 @@ p_value_drugUse
 sns.jointplot(x='pain-releiver-frequency', y='oxycontin-frequency', data=drugFrequency_temp, kind='reg')
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
-
-
-
-    <seaborn.axisgrid.JointGrid at 0x1247862e8>
-
-
-
-
-![png](output_79_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Hypothesis_jointplot_drugFreq.png" width="1600" height="800">
 
 
 
@@ -2979,19 +2888,9 @@ sns.boxplot(data=drugFrequency_temp['pain-releiver-frequency'], orient='h',ax=ax
 sns.distplot(drugFrequency_temp['pain-releiver-frequency'], bins=30, ax=ax[1])
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1208eaba8>
-
-
-
-
-![png](output_85_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_handling.png" width="1600" height="800">
 
 
 > 4 outlier data points were observed
@@ -3368,13 +3267,7 @@ sns.boxplot(data=df_comparison,orient='h')
 
 
 
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x12b369390>
-
-
-
-
-![png](output_98_1.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_vs_NoOutliers_boxplot.png" width="1600" height="800">
 
 
 
@@ -3390,21 +3283,9 @@ sns.boxplot(data=df_comparison['No outliers'], orient='h', ax=ax[0][1], color='g
 sns.distplot(df_comparison.dropna()['No outliers'], bins=30, ax=ax[1][1], color='g')
 ```
 
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
-    /Users/yapsiewlin/anaconda3/envs/py36/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
-      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x12c541ef0>
-
-
-
-
-![png](output_99_2.png)
+<img src="{{ site.baseurl }}/assets/img/portfolio/Outliers_comparison_overview.png" width="1600" height="800">
 
 
 
