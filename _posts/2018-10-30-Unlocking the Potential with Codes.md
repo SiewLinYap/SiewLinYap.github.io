@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unlocking the Potential with Codes
-feature-img: "assets/img/pexels/scripts_on_macbook.png"
+feature-img: "assets/img/pexels/Health-and-Fitness-Goals.jpg"
 thumbnail: "assets/img/thumbnails/codes.png"
 
 ---
