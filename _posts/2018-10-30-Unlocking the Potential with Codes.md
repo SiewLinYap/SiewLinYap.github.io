@@ -2,7 +2,7 @@
 layout: post
 title: Unlocking the Potential with Codes
 feature-img: "assets/img/pexels/scripts_on_macbook.png"
-thumbnail: "assets/img/thumbnails/Brain_power.png"
+thumbnail: "assets/img/thumbnails/codes.png"
 
 ---
 
