@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It's Not The End. It's Just The Beginning
-feature-img: "assets/img/pexels/rainbow.jpeg"
+feature-img: "assets/img/pexels/jump_to_the_success.png"
 
 ---
 
