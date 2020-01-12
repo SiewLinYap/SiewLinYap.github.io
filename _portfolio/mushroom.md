@@ -794,7 +794,6 @@ Snippet of the transformed data after dropping `vell-type` column due to constan
 </table>
 </div>
 
-</br>
 
 Based on this transformed dataframe, data was then further splitted into train and test set using split ratio of 0.3
 
@@ -898,7 +897,6 @@ df_feature_correlation
 <p>117 rows × 2 columns</p>
 </div>
 
-</br>
 
 ## __Part 3 : Model Building & Performance Check__
 
@@ -987,10 +985,8 @@ for i, model in enumerate(models):
 For an initial trial, default parameters were used for all 3 models. The model performances were found good even with the default parameters.
 
 
+3.1 Model Performance for Logistic RegressionCV
 
-```diff
-- 3.1 Model Performance for Logistic RegressionCV 
-```
 
     --------------------------------------------------------------------------------
     Model Parameters :
@@ -1025,11 +1021,8 @@ For an initial trial, default parameters were used for all 3 models. The model p
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/roc_logR.png">  
 
-</br>
-
-```diff
-- 3.2 Model Performance for Random Forest Classifier
-```    
+3.2 Model Performance for Random Forest Classifier
+ 
 
     --------------------------------------------------------------------------------
     Model Parameters :
@@ -1067,11 +1060,8 @@ For an initial trial, default parameters were used for all 3 models. The model p
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/roc_randomF.png">  
 
-</br>
+3.3 Model Performance for KNeighbors Classifier
 
-```diff
-- 3.3 Model Performance for KNeighbors Classifier
-```  
 
     --------------------------------------------------------------------------------
     Model Parameters :
@@ -1103,7 +1093,6 @@ For an initial trial, default parameters were used for all 3 models. The model p
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/roc_kNeighbors.png">  
 
-</br>
 
 ## __Part 4 : Analysis of Feature Importance__
 
@@ -1213,7 +1202,6 @@ df_feat_importance_lr
 <p>116 rows × 2 columns</p>
 </div>
 
-</br>
 To get the top 10 important features, concentation was done to merge the top 5 positive coefficient with top 5 negative coefficient.
 
 ```python
@@ -1315,8 +1303,6 @@ plt.show()
 > * No particular feature showing dominant effect on mushroom class prediction
 > * In general, combination of odor, gill-size and spore-print-color demonstrated higher effects on final mushroom class prediction
 
-
-</br>
 
 ### 4.2 Feature Importance derived from Random Forest Classifier Model
 
@@ -1420,8 +1406,6 @@ df_feat_importance_rf.sort_values('feature_importance', ascending=False)
 </div>
 
 
-
-
 ```python
 df_feat_imp_top10 = df_feat_importance_rf.sort_values('feature_importance', ascending=False).head(10)
 df_feat_imp_top10
@@ -1505,8 +1489,6 @@ df_feat_imp_top10
 </table>
 </div>
 
-
-</br>
 These values were found standard-scaled to the range of 0 to 1. Even after a selection of the top 10 feature, as there was no sign of +ve or -ve from these feature importance values, we would not be able to gauge if these top 10 feature was positively or negatively affecting the mushroom class prediction. To solve this problem, the correlation table generated earlier in Part 2 was used as a reference. 
 
 
@@ -1605,8 +1587,6 @@ df_feat_imp_correlation_top10_rf
 </table>
 </div>
 
-
-</br>
 
 By utilizing the +ve / -ve sign from the `correlation_to_class` column, it was then used as a reference sign to turn the original `feature_important` values into either a positive or negative value. WIth this method, the original weight of the feature important was retained and it was further enhanced to have an indication sign to show whether these features increased or decreased their importance affecting the `class` prediction.
 
@@ -1723,14 +1703,12 @@ plt.title('Top 10 Feature for Mushroom Class Prediction based on Random_Forest_C
 plt.show()
 ```
 
-
-<img src="{{ site.baseurl }}/assets/img/portfolio/featimportance_randomF.png">
+<img src="{{ site.baseurl }}/assets/img/portfolio/featImportance_randomF.png">
 
 
 > * No particular feature showing dominant effect on mushroom class prediction
 > * In general, combination of odor, gill-size, ring-type and stalk-surface demonstrated higher effects on final mushroom class prediction
 
-</br>
 
 ### 4.3 Feature Importance derived from KNeighbors Classifier
 
@@ -2051,15 +2029,13 @@ df_feat_score_correlation_top10_kn.plot(x='features', y='revised_feature_importa
 plt.title('Top 10 Feature for Mushroom Class Prediction based on KNeighbors_Classifier')
 plt.show()
 ```
-
-
-<img src="{{ site.baseurl }}/assets/img/portfolio/featimportance_kNeighbors.png">
+ 
+<img src="{{ site.baseurl }}/assets/img/portfolio/featImportance_kNeighbors.png">
 
 
 > * No particular feature showing dominant effect on mushroom class prediction
 > * In general, combination of odor, gill-size and stalk-surface demonstrated higher effects on final mushroom class prediction
 
-</br>
 
 ### 4.4 Common Top Feature across Difference Models
 
@@ -2074,7 +2050,6 @@ for feat in list(df_feat_coef_top10_lr['features']):
         print(feat)
 ```
 
-</br>
 
 The print results showed common Top Features for all the evaluated models as follows:
 
@@ -2082,7 +2057,7 @@ The print results showed common Top Features for all the evaluated models as fol
     gill-size_b
     odor_n
 
-</br>
+
 
 ## __Part 5 : Conclusion__
 
@@ -2096,7 +2071,6 @@ For highest safety and precautionary steps, it is still advisable to compare the
 <img src="{{ site.baseurl }}/assets/img/portfolio/side_by_side_comparison_3_models_featImp.png">
 
 
-</br>
 
 ## __Extras : Deployment__
 
