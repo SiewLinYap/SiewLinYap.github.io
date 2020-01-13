@@ -32,11 +32,6 @@ The pandas report is a html file outlining 5 key summaries [ Overview, Variable,
 
 <iframe width="680" height="360" src="{{ site.baseurl }}/assets/img/portfolio/pprofiling_report_demo.mp4" frameborder="0"> </iframe>
 
-<!-- <video width="680" height="360" controls>
-  <source type="video/mp4" src="{{ site.baseurl }}/assets/img/portfolio/pprofling_report_demo.mp4">
-</video> -->
-
-
 
 Based on the pandas report, I can now check the summarized statistic variable by variable in more details . Here are the observations and preliminary considerations for model building after studying the report :
 
