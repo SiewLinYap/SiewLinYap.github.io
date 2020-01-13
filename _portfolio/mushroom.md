@@ -30,10 +30,11 @@ pandas_report = pp.ProfileReport(df)
 
 The pandas report is a html file outlining 5 key summaries [ Overview, Variable, Correlation, Missing values, Sample]. 
 
+<iframe width="680" height="360" src="{{ site.baseurl }}/assets/img/portfolio/pprofiling_report_demo.mp4" frameborder="0"> </iframe>
 
-<video width="680" height="360" controls>
+<!-- <video width="680" height="360" controls>
   <source type="video/mp4" src="{{ site.baseurl }}/assets/img/portfolio/pprofling_report_demo.mp4">
-</video>
+</video> -->
 
 
 
