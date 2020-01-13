@@ -2,7 +2,7 @@
 layout: post
 title: Analysis on Mushroom Edibility
 img: "assets/img/portfolio/mushroom_icon.png"
-date: April, 18 2018
+date: January, 12 2020
 
 ---
 
@@ -981,7 +981,7 @@ for i, model in enumerate(models):
 For an initial trial, default parameters were used for all 3 models. The model performances were found good even with the default parameters.
 
 
-3.1 Model Performance for Logistic RegressionCV
+### 3.1 Model Performance for Logistic RegressionCV
 
 
     --------------------------------------------------------------------------------
@@ -1017,7 +1017,7 @@ For an initial trial, default parameters were used for all 3 models. The model p
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/roc_logR.png">  
 
-3.2 Model Performance for Random Forest Classifier
+### 3.2 Model Performance for Random Forest Classifier
  
 
     --------------------------------------------------------------------------------
@@ -1056,7 +1056,7 @@ For an initial trial, default parameters were used for all 3 models. The model p
 
 <img src="{{ site.baseurl }}/assets/img/portfolio/roc_randomF.png">  
 
-3.3 Model Performance for KNeighbors Classifier
+### 3.3 Model Performance for KNeighbors Classifier
 
 
     --------------------------------------------------------------------------------
@@ -1810,7 +1810,6 @@ df_kNeighbors_feature_score_top10
 </table>
 </div>
 
-</br>
 
 Similar as Random Forest Classifier feature importanct study in Part 4.2, the cross validation score doesn't have a +ve or -ve values. Therefore, the `correlation_to_class` column was merged in order to utilize its sign to convert the cross-val-score values.
 
