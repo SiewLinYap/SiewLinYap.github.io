@@ -30,11 +30,8 @@ pandas_report = pp.ProfileReport(df)
 
 The pandas report is a html file outlining 5 key summaries [ Overview, Variable, Correlation, Missing values, Sample]. 
 
+<video src="{{ site.baseurl }}/assets/img/portfolio/pprofling_report_demo.mp4" width="320" height="200" controls preload></video>
 
-<video controls="controls">
-  <source type="video/mp4" src="{{ site.baseurl }}/assets/img/portfolio/pprofling_report_demo.mov"></source>
-  <p>Your browser does not support the video element.</p>
-</video>
 
 
 Based on the pandas report, I can now check the summarized statistic variable by variable in more details . Here are the observations and preliminary considerations for model building after studying the report :
